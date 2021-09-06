@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 60vh;
+    margin: 0 auto;
+    text-align: center;
+
+    background: var(--light-blue) url("/assets/bg-image.png") no-repeat center fixed;
+    background-size: cover;
+    
+    color: #fff;
+}
+
+.container header {
+    width: 50%;
+    margin: 0 auto;
+    border-bottom: 1px solid rgb(184, 184, 184);
+    padding-bottom: 1.5em;
+    margin-bottom: 2em;
+}
+
+.titleContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.titleContainer div:last-child {
+    position: absolute;
+    top: 2em;
+    right: 6em;
+    width: 10em;
+}
+
+.navContainer {
+    margin-top: 2em;
+}
+
+.navContainer nav {
+    display: flex;
+    justify-content: center;
+}
+
+.navContainer nav a {
+    margin: 0 1em;
+}
