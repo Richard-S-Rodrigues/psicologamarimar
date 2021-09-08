@@ -1,47 +1,79 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: auto;
-    min-height: 60vh;
-    margin: 0 auto;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: auto;
+  min-height: 60vh;
+  margin: 0 auto;
+  padding-bottom: 1em;
+  text-align: center;
 
-    background: var(--light-blue) url("/assets/bg-image.png") no-repeat center fixed;
-    background-size: cover;
-    
-    color: #fff;
+  background: var(--light-blue) url("/assets/bg-image.png") no-repeat center
+    fixed;
+  background-size: cover;
+
+  color: #fff;
 }
 
 .container header {
-    width: 50%;
-    margin: 0 auto;
-    border-bottom: 1px solid rgb(184, 184, 184);
-    padding-bottom: 1.5em;
-    margin-bottom: 2em;
+  width: 50%;
+  margin: 0 auto;
+  border-bottom: 1px solid rgb(184, 184, 184);
+  padding-bottom: 1.5em;
+  margin-bottom: 2em;
 }
 
 .titleContainer {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
-.titleContainer div:last-child {
-    position: absolute;
-    top: 2em;
-    right: 6em;
-    width: 10em;
+.telephoneInfo {
+  position: absolute;
+  top: 2em;
+  right: 6em;
+  width: 10em;
 }
 
 .navContainer {
-    margin-top: 2em;
+  margin-top: 2em;
 }
 
 .navContainer nav {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .navContainer nav a {
-    margin: 0 1em;
+  margin: 0 1em;
+}
+
+@media (max-width: 577px) {
+  .container header {
+    width: 90%;
+  }
+
+  .container section {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .telephoneInfo {
+    width: 100%;
+    position: unset;
+    margin-top: 1em;
+  }
+  .titleContainer {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .navContainer nav {
+    display: block;
+  }
+
+  .navContainer nav a {
+    display: block;
+    margin-top: 1em;
+  }
 }

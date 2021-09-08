@@ -23,7 +23,7 @@ const Footer = () => (
               height="1"
               layout="fixed"
             />
-            (21) 97400-9839
+            <p>(21) 97400-9839</p>
           </p>
           <p>
             <Image
@@ -33,7 +33,7 @@ const Footer = () => (
               height="1"
               layout="fixed"
             />
-            marimarnascimento@gmail.com
+            <p>marimarnascimento@gmail.com</p>
           </p>
         </div>
       </section>
