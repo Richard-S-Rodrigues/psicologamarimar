@@ -1,8 +1,7 @@
 
 .container main {
   background: url("/assets/curve-light-blue.svg") no-repeat center bottom;
-  position: absolute;
-  content: '';
+
   width: 100vw;
   height: 100%;
 }
