@@ -8,7 +8,7 @@
   padding-bottom: 1em;
   text-align: center;
 
-  background: var(--light-blue) url("/assets/bg-image.png") no-repeat center
+  background: var(--blue) url("/assets/bg-image-header.svg") no-repeat center
     fixed;
   background-size: cover;
 
@@ -21,6 +21,14 @@
   border-bottom: 1px solid rgb(184, 184, 184);
   padding-bottom: 1.5em;
   margin-bottom: 2em;
+}
+
+.container section {
+  margin-top: 1em;
+}
+
+.container section button {
+  margin-top: 2em;
 }
 
 .titleContainer {
@@ -46,6 +54,10 @@
 
 .navContainer nav a {
   margin: 0 1em;
+}
+
+.activedLink {
+  color: #d8be52;
 }
 
 @media (max-width: 577px) {

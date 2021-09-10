@@ -15,7 +15,7 @@ const Footer = () => (
           />
         </div>
         <div>
-          <p>
+          <div>
             <Image
               src="/assets/whatsapp-icon.svg"
               alt="Ícone do WhatSapp"
@@ -23,9 +23,9 @@ const Footer = () => (
               height="1"
               layout="fixed"
             />
-            <p>(21) 97400-9839</p>
-          </p>
-          <p>
+            (21) 97400-9839
+          </div>
+          <div>
             <Image
               src="/assets/mail-icon.svg"
               alt="Ícone de E-mail"
@@ -33,15 +33,15 @@ const Footer = () => (
               height="1"
               layout="fixed"
             />
-            <p>marimarnascimento@gmail.com</p>
-          </p>
+            marimarnascimento@gmail.com
+          </div>
         </div>
       </section>
       <section className={styles.aboutContainer}>
         <div>
           <Image
             src="/assets/photo.jpg"
-            alt=""
+            alt="Psicóloga"
             width="100"
             height="100"
             layout="fixed"

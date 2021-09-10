@@ -1,19 +1,19 @@
 html,
 body {
-  padding: 0;
-  margin: 0;
   font-family: "Montserrat", sans-serif;
 }
 
 * {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
 :root {
-  --blue: #053E6B;
+  --blue: #053e6b;
   --dark-blue: #002441;
-  --yellow: #D8BE52;
-  --light-blue: #F5FBFF;
+  --yellow: #d8be52;
+  --light-blue: #f5fbff;
 }
 
 a {

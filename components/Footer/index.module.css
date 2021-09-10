@@ -17,13 +17,13 @@
   display: flex;
 }
 
-.contactsContainer div:last-child p {
+.contactsContainer div:last-child div {
   display: flex;
   align-items: center;
 }
 
-.contactsContainer div:last-child p p {
-  margin-left: 1em;
+.contactsContainer div:last-child div div {
+  margin-right: 1em;
 }
 
 .aboutContainer {
@@ -73,5 +73,15 @@
   .aboutContainer div:first-child {
     justify-content: center;
     flex-direction: column;
+  }
+}
+
+@media (max-width: 350px) {
+  .contactsContainer {
+    width: 100%;
+  }
+
+  .contactsContainer div:last-child div div {
+    margin-right: 0;
   }
 }

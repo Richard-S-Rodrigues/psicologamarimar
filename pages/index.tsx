@@ -1,14 +1,10 @@
 import type { NextPage } from "next";
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
-      <Header />
       <main>
         <div className={styles.quote}>
           <p>
@@ -20,7 +16,6 @@ const Home: NextPage = () => {
           <p>Dalai Lama (1999)</p>
         </div>
       </main>
-      <Footer />
     </div>
   );
 };

@@ -1,0 +1,65 @@
+.container {
+  width: 100vw;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.container main {
+  width: 90%;
+  margin-top: 8em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.textContainer {
+  width: 60%;
+}
+
+.textContainer h1 {
+  font-size: 30px;
+}
+
+.textContainer p {
+  text-align: justify;
+  text-justify: inter-word;
+  font-size: 20px;
+  line-height: 1.8;
+  margin-top: 1em;
+}
+
+.imgContainer {
+  width: 30%;
+}
+
+.imgContainer img {
+  border-radius: 50%;
+}
+
+.bgCurve {
+  width: 100vw;
+}
+
+.bgCurve svg {
+  position: relative;
+  top: 1em;
+}
+
+@media (max-width: 780px) {
+  .container main {
+    flex-direction: column-reverse;
+    width: 95%;
+  }
+
+  .textContainer {
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 5em;
+  }
+
+  .imgContainer {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
