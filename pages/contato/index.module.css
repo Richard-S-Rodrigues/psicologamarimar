@@ -1,0 +1,70 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  color: var(--dark-blue);
+  background: url("/assets/light-blue-wave-2.svg") no-repeat bottom;
+  background-size: max(150em, 100%);
+}
+
+.container main {
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 10em;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.formContainer form {
+  margin-top: 1em;
+}
+
+.formContainer form div {
+  display: block;
+  margin-bottom: 2em;
+}
+
+.formContainer form div input,
+.formContainer form div textarea {
+  width: 100%;
+  padding: 0.2em;
+  font-size: 18px;
+}
+
+.formContainer form div textarea {
+  height: 10em;
+}
+
+.contactContainer {
+  margin-left: 3em;
+}
+
+.contactContainer ul {
+  margin-top: 1em;
+  margin-left: 1em;
+}
+
+.contactContainer ul li {
+  font-size: 18px;
+  margin-bottom: 1em;
+}
+
+@media (max-width: 603px) {
+  .container main {
+    display: block;
+  }
+
+  .contactContainer {
+    margin-top: 2em;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .container {
+    display: inline;
+  }
+  .container main {
+    margin-top: 5em;
+  }
+}
