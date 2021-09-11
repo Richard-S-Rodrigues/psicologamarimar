@@ -1,0 +1,41 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: inline-table;
+  margin: 0 auto;
+  background: url("/assets/light-blue-wave.svg") no-repeat bottom;
+  background-size: max(150em, 100%);
+}
+
+.container main {
+  width: 90%;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 5em;
+}
+
+.container main h1 {
+  text-align: center;
+  margin-top: 3em;
+  margin-bottom: 2em;
+}
+
+.container main div {
+  width: 100%;
+  display: flex;
+  margin: 2em auto;
+}
+
+.container main div p {
+  width: 100%;
+  font-size: 18px;
+  line-height: 1.8;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+@media (max-width: 577px) {
+  .container main div {
+    width: 90%;
+  }
+}

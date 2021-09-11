@@ -8,8 +8,8 @@
   padding-bottom: 1em;
   text-align: center;
 
-  background: var(--blue) url("/assets/bg-image-header.svg") no-repeat center
-    fixed;
+  background: var(--dark-blue) url("/assets/bg-image-header.svg") no-repeat
+    center fixed;
   background-size: cover;
 
   color: #fff;
