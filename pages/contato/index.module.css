@@ -49,6 +49,80 @@
   margin-bottom: 1em;
 }
 
+.success {
+  position: sticky;
+  text-align: center;
+  top: 0;
+  padding: 1em;
+  background: rgb(22, 161, 34);
+  color: #fff;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.fail {
+  position: sticky;
+  text-align: center;
+  top: 0;
+  padding: 1em;
+  background: rgb(161, 22, 22);
+  color: #fff;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.hide {
+  -moz-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Firefox */
+  -webkit-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Safari and Chrome */
+  -o-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Opera */
+  animation: cssAnimation 0s ease-in 5s forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+/*@keyframes cssAnimation {
+  to {
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+}
+@-webkit-keyframes cssAnimation {
+  to {
+    width: 0;
+    height: 0;
+    padding: 0;
+    visibility: hidden;
+  }
+}*/
+
+@keyframes cssAnimation {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes cssAnimation {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 @media (max-width: 603px) {
   .container main {
     display: block;
