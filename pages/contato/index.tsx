@@ -1,8 +1,9 @@
+import type { NextPage } from "next";
 import { useState } from "react";
 
 import styles from "./index.module.css";
 
-const Contact = () => {
+const Contact: NextPage = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [tel, setTel] = useState("");

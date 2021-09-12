@@ -1,8 +1,9 @@
+import type { NextPage } from "next";
 import Image from "next/image";
 
 import styles from "./index.module.css";
 
-const Atuacao = () => (
+const Atuacao: NextPage = () => (
   <div className={styles.container}>
     <main>
       <h1>Terapia Cognitivo-Comportamental (TCC)</h1>
