@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import styles from "./index.module.css";
 
 const Atuacao = () => (
@@ -12,6 +14,12 @@ const Atuacao = () => (
           atuação. Ou seja, a psicoterapia possui diferentes abordagens, e cada
           psicólogo utiliza-se de pelo menos uma delas em sua atuação.
         </p>
+        <Image
+          src="/assets/brain-icon.svg"
+          alt="Ícone cérebro"
+          width="30"
+          height="30"
+        />
       </div>
       <div>
         <p>
@@ -25,6 +33,12 @@ const Atuacao = () => (
         </p>
       </div>
       <div>
+        <Image
+          src="/assets/brain-icon-2.svg"
+          alt="Ícone cérebro - 2"
+          width="30"
+          height="30"
+        />
         <p>
           As teorias e métodos da TCC foram desenvolvidas inicialmente pelo
           médico e psicanalista Aaron T. Beck por volta das décadas de 1960 e
