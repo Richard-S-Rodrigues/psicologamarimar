@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import { useState } from "react";
+import ReactLoading from "react-loading";
 
 import styles from "./index.module.css";
 
@@ -12,6 +13,8 @@ const Contact: NextPage = () => {
   const [isSent, setIsSent] = useState(false);
   const [isError, setIsError] = useState(false);
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const onSubmitHandler = (event: any) => {
     event.preventDefault();
 
@@ -23,6 +26,8 @@ const Contact: NextPage = () => {
       tel,
       message,
     };
+
+    setIsLoading(true);
 
     fetch("/api/contact", {
       method: "POST",
@@ -42,6 +47,8 @@ const Contact: NextPage = () => {
           setEmail("");
           setTel("");
           setMessage("");
+
+          setIsLoading(false);
         }
       })
       .catch((error) => {
@@ -66,7 +73,7 @@ const Contact: NextPage = () => {
           <h2>Você pode tirar suas dúvidas pelo formulário</h2>
           <form onSubmit={onSubmitHandler}>
             <div>
-              <label htmlFor="name">NOME</label>
+              <label htmlFor="name">NOME*</label>
               <input
                 type="text"
                 name="name"
@@ -77,7 +84,7 @@ const Contact: NextPage = () => {
               />
             </div>
             <div>
-              <label htmlFor="email">E-MAIL</label>
+              <label htmlFor="email">E-MAIL*</label>
               <input
                 type="text"
                 name="email"
@@ -88,7 +95,7 @@ const Contact: NextPage = () => {
               />
             </div>
             <div>
-              <label htmlFor="tel">CELULAR</label>
+              <label htmlFor="tel">CELULAR*</label>
               <input
                 type="text"
                 name="tel"
@@ -99,7 +106,7 @@ const Contact: NextPage = () => {
               />
             </div>
             <div>
-              <label htmlFor="message">MENSAGEM</label>
+              <label htmlFor="message">MENSAGEM*</label>
               <textarea
                 name="message"
                 id="message"
@@ -110,6 +117,14 @@ const Contact: NextPage = () => {
             </div>
             <button type="submit">ENVIAR</button>
           </form>
+          {isLoading && (
+            <ReactLoading
+              type="bubbles"
+              color="#053E6B"
+              height={"200px"}
+              width={"200px"}
+            />
+          )}
         </div>
         <div className={styles.contactContainer}>
           <h2>Ou mandar mensagem diretamente por e-mail ou WhatsApp:</h2>

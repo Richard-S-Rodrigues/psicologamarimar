@@ -11,10 +11,18 @@
   color: var(--dark-blue);
 }
 
+.imgContainer div h1 {
+  line-height: 1.5;
+}
+
 .postsContainer {
   text-align: center;
   margin-top: 2em;
   color: var(--dark-blue);
+}
+
+.postsContainer p {
+  margin-top: 1em;
 }
 
 .quote {
@@ -27,8 +35,8 @@
   margin-top: 10em;
   padding: 1em;
 
-  background: var(--light-blue) url("/assets/quote-bg-image.png") no-repeat
-    center fixed;
+  background: var(--blue) url("/assets/quote-bg-image.png") no-repeat center
+    fixed;
   background-size: cover;
 
   color: #fff;

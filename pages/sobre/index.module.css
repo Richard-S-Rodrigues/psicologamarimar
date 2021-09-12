@@ -28,6 +28,10 @@
   margin-top: 1em;
 }
 
+.textContainer button {
+  margin-top: 1em;
+}
+
 .imgContainer {
   width: 30%;
 }

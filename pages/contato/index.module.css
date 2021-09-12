@@ -83,23 +83,6 @@
   animation-fill-mode: forwards;
 }
 
-/*@keyframes cssAnimation {
-  to {
-    width: 0;
-    height: 0;
-    padding: 0;
-    overflow: hidden;
-  }
-}
-@-webkit-keyframes cssAnimation {
-  to {
-    width: 0;
-    height: 0;
-    padding: 0;
-    visibility: hidden;
-  }
-}*/
-
 @keyframes cssAnimation {
   0% {
     opacity: 1;
