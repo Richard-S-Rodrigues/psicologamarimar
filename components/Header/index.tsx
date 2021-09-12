@@ -5,7 +5,7 @@ import Link from "next/link";
 import styles from "./index.module.css";
 
 const Header = () => {
-  const { pathname } = useRouter();
+  const { pathname, push } = useRouter();
 
   return (
     <div className={styles.container}>
@@ -52,7 +52,7 @@ const Header = () => {
       </header>
       <section>
         <h2>Psicoterapia individual online para adultos e idosos.</h2>
-        <button>ENTRE EM CONTATO</button>
+        <button onClick={() => push("/contato")}>ENTRE EM CONTATO</button>
       </section>
     </div>
   );
