@@ -26,10 +26,10 @@ const Home: NextPage = () => {
         </section>
         <section className={styles.quote}>
           <p>
-            "Se pudermos reorientar nossos pensamentos e emoções e reorganizar
-            nosso comportamento, então poderemos não só aprender a lidar com o
-            sofrimento mais facilmente, mas, sobretudo e em primeiro lugar,
-            evitar que muito dele surja."
+            &quot;Se pudermos reorientar nossos pensamentos e emoções e
+            reorganizar nosso comportamento, então poderemos não só aprender a
+            lidar com o sofrimento mais facilmente, mas, sobretudo e em primeiro
+            lugar, evitar que muito dele surja.&quot;
           </p>
           <p>Dalai Lama (1999)</p>
         </section>

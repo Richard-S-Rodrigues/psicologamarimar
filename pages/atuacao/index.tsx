@@ -9,11 +9,12 @@ const Atuacao: NextPage = () => (
       <h1>Terapia Cognitivo-Comportamental (TCC)</h1>
       <div>
         <p>
-          É comum pensar que a psicologia é algo "único" e será aplicada na
-          terapia da mesma forma por todo e qualquer psicólogo. No entanto, ela
-          é um campo muito diverso e amplo, compreendendo diversas linhas de
-          atuação. Ou seja, a psicoterapia possui diferentes abordagens, e cada
-          psicólogo utiliza-se de pelo menos uma delas em sua atuação.
+          É comum pensar que a psicologia é algo &quot;único&quot; e será
+          aplicada na terapia da mesma forma por todo e qualquer psicólogo. No
+          entanto, ela é um campo muito diverso e amplo, compreendendo diversas
+          linhas de atuação. Ou seja, a psicoterapia possui diferentes
+          abordagens, e cada psicólogo utiliza-se de pelo menos uma delas em sua
+          atuação.
         </p>
         <Image
           src="/assets/brain-icon.svg"
