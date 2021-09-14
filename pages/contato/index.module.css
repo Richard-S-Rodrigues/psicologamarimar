@@ -1,6 +1,6 @@
 .container {
   width: 100vw;
-  height: 100vh;
+  height: auto;
   color: var(--dark-blue);
   background: url("/assets/light-blue-wave-2.svg") no-repeat bottom;
   background-size: max(150em, 100%);
@@ -10,9 +10,13 @@
   display: flex;
   width: 90%;
   margin: 0 auto;
-  margin-top: 10em;
+  margin-top: 5em;
   height: 100%;
   justify-content: space-between;
+}
+
+.formContainer {
+  margin-bottom: 2em;
 }
 
 .formContainer form {
@@ -32,7 +36,8 @@
 }
 
 .formContainer form div textarea {
-  height: 10em;
+  height: auto;
+  min-height: 10em;
 }
 
 .contactContainer {
@@ -118,10 +123,14 @@
 }
 
 @media (max-width: 380px) {
-  .container {
-    display: inline;
-  }
   .container main {
+    width: 80%;
     margin-top: 5em;
+  }
+
+  .contactContainer ul li {
+    word-wrap: break-word;
+    text-align: justify;
+    text-justify: inter-word;
   }
 }

@@ -81,7 +81,14 @@
     width: 100%;
   }
 
-  .contactsContainer div:last-child div div {
-    margin-right: 0;
+  .contactsContainer div:last-child {
+    width: 90%;
+  }
+
+  .contactsContainer div:last-child div span {
+    width: 100%;
+    text-align: justify;
+    text-justify: inter-word;
+    word-wrap: break-word;
   }
 }

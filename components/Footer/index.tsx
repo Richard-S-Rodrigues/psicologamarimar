@@ -7,7 +7,7 @@ const Footer = () => {
   const router = useRouter();
 
   return (
-    <div className={styles.container}>
+    <footer className={styles.container}>
       <div className={styles.mainContainer}>
         <section className={styles.contactsContainer}>
           <div>
@@ -27,7 +27,7 @@ const Footer = () => {
                 height="1"
                 layout="fixed"
               />
-              (21) 97400-9839
+              <span>(21) 97400-9839</span>
             </div>
             <div>
               <Image
@@ -37,7 +37,7 @@ const Footer = () => {
                 height="1"
                 layout="fixed"
               />
-              marimarnascimento@gmail.com
+              <span>marimarnascimento@gmail.com</span>
             </div>
           </div>
         </section>
@@ -66,7 +66,7 @@ const Footer = () => {
         </section>
       </div>
       <div>Copyright © 2021. Todos os direitos reservados.</div>
-    </div>
+    </footer>
   );
 };
 
