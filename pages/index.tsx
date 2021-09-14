@@ -17,7 +17,10 @@ const Home: NextPage = () => {
             />
           </div>
           <div>
-            <h1>Acompanhamento psicoterapêutico no conforto de sua casa</h1>
+            <h1>
+              Acompanhamento psicoterapêutico online, para cuidar da sua saúde
+              mental no conforto da sua casa.
+            </h1>
           </div>
         </section>
         <section className={styles.postsContainer}>

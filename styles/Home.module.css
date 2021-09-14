@@ -12,6 +12,10 @@
 }
 
 .imgContainer div h1 {
+  width: 80%;
+  margin: auto;
+  text-align: justify;
+  text-justify: inter-word;
   line-height: 1.5;
 }
 
