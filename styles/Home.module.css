@@ -47,8 +47,7 @@
 
 .quote p {
   width: 70%;
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: center;
   line-height: 1.5;
   margin: 1em auto;
 }
