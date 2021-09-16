@@ -14,11 +14,9 @@ const Header = () => {
           <div>
             <Image src="/assets/logo.svg" alt="Logo" width="100" height="100" />
             <h1>MARIMAR NASCIMENTO</h1>
-            <small>PSICÓLOGA | CRP 05/6100</small>
+            <small>PSICÓLOGA | CRP 05/66100</small>
           </div>
-          <div className={styles.telephoneInfo}>
-            Telefone/WhatsApp: (21) 97400-9839
-          </div>
+          <div className={styles.telephoneInfo}>WhatsApp: (21) 97400-9839</div>
         </section>
         <section className={styles.navContainer}>
           <nav>

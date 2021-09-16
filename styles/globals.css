@@ -25,7 +25,7 @@ a {
 
 a:hover {
   text-decoration: underline;
-  color: var(--dark-blue);
+  color: var(--yellow);
   text-decoration-color: var(--yellow);
 }
 
