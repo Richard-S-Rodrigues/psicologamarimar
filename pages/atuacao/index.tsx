@@ -42,7 +42,7 @@ const Atuacao: NextPage = () => (
           height="30"
         />
         <p>
-          As teorias e métodos da TCC foram desenvolvidas inicialmente pelo
+          As teorias e métodos da TCC foram desenvolvidos inicialmente pelo
           médico e psicanalista Aaron T. Beck por volta das décadas de 1960 e
           1970 e influenciaram a evolução de diversas técnicas mais específicas
           utilizadas atualmente. Inicialmente focada nos quadros de depressão e
