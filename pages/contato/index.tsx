@@ -81,7 +81,7 @@ const Contact: NextPage = () => {
       )}
       <main>
         <div className={styles.formContainer}>
-          <h2>Você pode tirar suas dúvidas pelo formulário</h2>
+          <h2>Tire suas dúvidas pelo formulário</h2>
           <form onSubmit={onSubmitHandler}>
             <div>
               <label htmlFor="name">NOME*</label>
@@ -152,10 +152,17 @@ const Contact: NextPage = () => {
           )}
         </div>
         <div className={styles.contactContainer}>
-          <h2>Ou mandar mensagem diretamente por e-mail ou WhatsApp:</h2>
+          <h2>Ou mande mensagem para:</h2>
           <ul>
-            <li>marimarnascimento@gmail.com</li>
-            <li>(21) 97400-9839</li>
+            <li>
+              <h3>E-mail</h3>
+              <p>marimarnascimento@gmail.com</p>
+            </li>
+
+            <li>
+              <h3>Whatsapp</h3>
+              <p>(21) 97400-9839</p>
+            </li>
           </ul>
         </div>
       </main>
