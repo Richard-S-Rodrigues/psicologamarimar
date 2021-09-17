@@ -1,27 +1,46 @@
+.container {
+  background: url("/assets/home-bg-wave.svg") no-repeat bottom;
+  background-size: max(100em, 100%);
+}
+
 .container main {
-  display: block;
-  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.container main section {
+  width: 50%;
 }
 
 .imgContainer {
-  display: flex;
-  align-items: center;
+  display: block;
 
-  background: url("/assets/wave.svg") no-repeat bottom;
   color: var(--dark-blue);
 }
 
-.imgContainer div h1 {
+.image {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+.text {
   width: 80%;
   margin: auto;
-  text-align: justify;
-  text-justify: inter-word;
+}
+
+.imgContainer div h2 {
+  font-size: 18px;
+  text-align: center;
   line-height: 1.5;
 }
 
 .postsContainer {
   text-align: center;
-  margin-top: 2em;
+  margin-top: 3em;
+  border-left: 1px solid #ddd;
   color: var(--dark-blue);
 }
 
@@ -56,13 +75,32 @@
   margin-top: 0;
 }
 
+@media (max-width: 790px) {
+  .container main {
+    display: block;
+  }
+
+  .container main section {
+    width: 100%;
+  }
+
+  .postsContainer {
+    border-left: 0;
+    border-top: 1px solid #ddd;
+    padding-top: 1em;
+  }
+
+  .postsContainer h2 {
+    font-size: 20px;
+  }
+}
+
 @media (max-width: 575px) {
   .imgContainer {
     display: block;
   }
 
   .imgContainer div {
-    width: 90%;
     text-align: center;
     margin: 0 auto;
   }

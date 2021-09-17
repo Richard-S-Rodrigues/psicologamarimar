@@ -60,6 +60,19 @@
   color: #d8be52;
 }
 
+@media (max-width: 720px) {
+  .titleContainer {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .telephoneInfo {
+    width: 100%;
+    position: unset;
+    margin-top: 2em;
+  }
+}
+
 @media (max-width: 577px) {
   .container header {
     width: 90%;
@@ -68,16 +81,6 @@
   .container section {
     width: 90%;
     margin: 0 auto;
-  }
-
-  .telephoneInfo {
-    width: 100%;
-    position: unset;
-    margin-top: 1em;
-  }
-  .titleContainer {
-    display: flex;
-    flex-direction: column-reverse;
   }
 
   .navContainer nav {
