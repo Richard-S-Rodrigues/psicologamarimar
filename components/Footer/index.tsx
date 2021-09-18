@@ -10,21 +10,21 @@ const Footer = () => {
     <footer className={styles.container}>
       <div className={styles.mainContainer}>
         <section className={styles.contactsContainer}>
-          <div>
+          <div className={styles.logo}>
             <Image
-              src="/assets/logo-black.svg"
+              src="/assets/logo-light-blue.png"
               alt="Logo"
-              width="50"
-              height="50"
+              width="100"
+              height="100"
             />
           </div>
-          <div>
+          <div className={styles.medias}>
             <div>
               <Image
                 src="/assets/whatsapp-icon.svg"
                 alt="Ícone do WhatSapp"
-                width="1"
-                height="1"
+                width="25"
+                height="25"
                 layout="fixed"
               />
               <span>(21) 97400-9839</span>
@@ -33,8 +33,8 @@ const Footer = () => {
               <Image
                 src="/assets/mail-icon.svg"
                 alt="Ícone de E-mail"
-                width="1"
-                height="1"
+                width="25"
+                height="25"
                 layout="fixed"
               />
               <span>marimarnascimento@gmail.com</span>
@@ -65,7 +65,9 @@ const Footer = () => {
           </div>
         </section>
       </div>
-      <div>Copyright © 2021. Todos os direitos reservados.</div>
+      <div className={styles.copyright}>
+        Copyright © 2021. Todos os direitos reservados.
+      </div>
     </footer>
   );
 };

@@ -1,11 +1,13 @@
 .container {
-  width: 100vw;
   background: #002441;
+  padding-top: 2em;
 }
 
-.container div {
+.mainContainer,
+.copyright {
   color: #fff;
-  padding: 1em;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .mainContainer {
@@ -15,14 +17,24 @@
 
 .contactsContainer {
   display: flex;
+  height: min-content;
+  align-items: center;
 }
 
-.contactsContainer div:last-child div {
+.medias {
+  margin-left: 1em;
+}
+
+.medias div {
   display: flex;
   align-items: center;
 }
 
-.contactsContainer div:last-child div div {
+.medias > div {
+  margin: 1em auto;
+}
+
+.medias div div {
   margin-right: 1em;
 }
 
@@ -47,27 +59,37 @@
 }
 
 .aboutContainer div:last-child p {
+  margin: 1em auto;
   text-align: justify;
   text-justify: inter-word;
   line-height: 1.5;
 }
 
-@media (max-width: 820px) {
+.copyright {
+  padding-bottom: 1em;
+  margin-top: 1em;
+  font-size: 14px;
+}
+
+@media (max-width: 840px) {
   .container .mainContainer {
     display: block;
     padding: 0;
   }
 
   .contactsContainer {
-    width: 90%;
     margin: 0 auto;
     flex-direction: column;
     text-align: center;
   }
 
+  .medias {
+    margin-left: 0;
+  }
+
   .aboutContainer {
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
+    margin: 1em auto;
   }
 
   .aboutContainer div:first-child {
@@ -81,14 +103,13 @@
     width: 100%;
   }
 
-  .contactsContainer div:last-child {
+  .medias {
     width: 90%;
   }
 
-  .contactsContainer div:last-child div span {
+  .medias div span {
     width: 100%;
-    text-align: justify;
-    text-justify: inter-word;
-    word-wrap: break-word;
+    text-align: initial;
+    word-wrap: anywhere;
   }
 }
