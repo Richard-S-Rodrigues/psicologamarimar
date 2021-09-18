@@ -1,5 +1,5 @@
 .container {
-  width: 100vw;
+  width: 90%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -51,6 +51,7 @@
 
 @media (max-width: 780px) {
   .container main {
+    margin-top: 4em;
     flex-direction: column-reverse;
     width: 95%;
   }

@@ -72,6 +72,11 @@
 }
 
 @media (max-width: 840px) {
+  .mainContainer,
+  .copyright {
+    width: 80%;
+  }
+
   .container .mainContainer {
     display: block;
     padding: 0;
@@ -101,10 +106,6 @@
 @media (max-width: 350px) {
   .contactsContainer {
     width: 100%;
-  }
-
-  .medias {
-    width: 90%;
   }
 
   .medias div span {
