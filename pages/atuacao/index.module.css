@@ -8,7 +8,7 @@
 }
 
 .container main {
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
   display: block;
   margin-bottom: 5em;
@@ -22,34 +22,53 @@
 
 .container main div {
   width: 100%;
-  display: flex;
-  margin: 2em auto;
+  display: inline-flex;
 }
 
 .container main div p {
-  width: 100%;
+  width: auto;
   font-size: 18px;
   line-height: 1.8;
   text-align: justify;
   text-justify: inter-word;
 }
 
+.text1 {
+  margin-bottom: 0.5em;
+}
+
+.text2 {
+  margin-top: 2em;
+}
+
+.text1 p:last-child {
+  margin-left: 1em;
+}
+
+.text2 p:first-child {
+  margin-right: 1em;
+}
+
 .container main div div {
   width: 50%;
 }
 
-@media (max-width: 582px) {
+@media (max-width: 692px) {
+  .container main h1 {
+    font-size: 22px;
+  }
+
   .container main div {
-    flex-direction: column;
+    display: block;
+  }
+
+  .container main div p {
+    display: flex;
+    justify-content: center;
+    margin-left: 0;
   }
 
   .container main div div {
     width: 100%;
-  }
-}
-
-@media (max-width: 577px) {
-  .container main div {
-    width: 90%;
   }
 }
