@@ -16,6 +16,7 @@
 
 .formContainer {
   margin-bottom: 2em;
+  width: 100%;
 }
 
 .formContainer form {
@@ -40,7 +41,10 @@
 }
 
 .contactContainer {
-  margin-left: 5em;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .contactContainer ul {
@@ -111,26 +115,34 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 725px) {
   .container main {
     display: block;
+    width: 80%;
+    margin-top: 5em;
   }
 
   .contactContainer {
     margin-top: 2em;
     margin-left: 0;
   }
+
+  .contactContainer h2 {
+    font-size: 20px;
+  }
+
+  .contactContainer ul {
+    margin: 0 auto;
+  }
+
+  .contactContainer ul li h3 {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 380px) {
-  .container main {
-    width: 80%;
-    margin-top: 5em;
-  }
-
   .contactContainer ul li {
-    word-wrap: break-word;
-    text-align: justify;
-    text-justify: inter-word;
+    word-wrap: anywhere;
+    text-align: left;
   }
 }

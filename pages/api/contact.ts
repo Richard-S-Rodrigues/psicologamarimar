@@ -5,7 +5,7 @@ import { Request, Response } from "express";
 interface BodyData {
   name: string;
   email: string;
-  tel: string;
+  phoneNumber: string;
   message: string;
 }
 
@@ -17,7 +17,7 @@ interface MailOptionsData {
 }
 
 export default function (req: Request, res: Response) {
-  const { name, email, tel, message }: BodyData = req.body;
+  const { name, email, phoneNumber, message }: BodyData = req.body;
 
   const nodemailer = require("nodemailer");
 
@@ -32,12 +32,19 @@ export default function (req: Request, res: Response) {
 
     const mailOptions: MailOptionsData = {
       from: email,
-      to: "marimarnascimento@gmail.com",
+      to: "richardsouzarodrigues555@gmail.com",
       subject: "psicoterapia",
-      text: `
+      text: phoneNumber
+        ? `
       \nE-MAIL: ${email},
       \nNOME: ${name},
-      \nTELEFONE: ${tel}
+      \nCELULAR: ${phoneNumber}
+      \n---------------------------------------------------------------- 
+      \n${message}
+      `
+        : `
+      \nE-MAIL: ${email},
+      \nNOME: ${name}
       \n---------------------------------------------------------------- 
       \n${message}
       `,

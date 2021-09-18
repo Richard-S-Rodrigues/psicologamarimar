@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import { useState } from "react";
+import { AsYouType } from "libphonenumber-js";
 import ReactLoading from "react-loading";
 
 import styles from "./index.module.css";
@@ -7,7 +8,6 @@ import styles from "./index.module.css";
 const Contact: NextPage = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [tel, setTel] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [message, setMessage] = useState("");
 
@@ -19,12 +19,11 @@ const Contact: NextPage = () => {
   const onSubmitHandler = (event: any) => {
     event.preventDefault();
 
-    if (!name || !email || !phoneNumber || !message) return;
+    if (!name || !email || !message) return;
 
     const data = {
       name,
       email,
-      tel,
       phoneNumber,
       message,
     };
@@ -47,7 +46,6 @@ const Contact: NextPage = () => {
 
           setName("");
           setEmail("");
-          setTel("");
           setPhoneNumber("");
           setMessage("");
 
@@ -62,6 +60,10 @@ const Contact: NextPage = () => {
   const Utils = {
     formatPhoneNumber(value: string) {
       value = value.replace(/\D/g, "");
+
+      value = new AsYouType("BR").input(value).trim();
+
+      if (value.split("").length > 15) return;
 
       return value;
     },
@@ -106,28 +108,17 @@ const Contact: NextPage = () => {
               />
             </div>
             <div>
-              <label htmlFor="phoneNumber">CELULAR*</label>
+              <label htmlFor="phoneNumber">CELULAR</label>
               <input
                 type="text"
                 name="phoneNumber"
                 id="phoneNumber"
-                maxLength={11}
+                placeholder="(00) 00000-0000"
                 value={phoneNumber}
+                maxLength={15}
                 onChange={(event) => {
                   setPhoneNumber(Utils.formatPhoneNumber(event.target.value));
                 }}
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="tel">TELEFONE</label>
-              <input
-                type="text"
-                name="tel"
-                id="tel"
-                maxLength={10}
-                value={tel}
-                onChange={(event) => setTel(event.target.value)}
               />
             </div>
             <div>
