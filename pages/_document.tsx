@@ -6,6 +6,10 @@ export default class MyDocument extends Document {
     return (
       <Html lang="pt-BR">
         <Head>
+          <meta
+            name="description"
+            content="Psicologia clínica - atendimento online individual para adultos e idosos com abordagem na Terapia Cognitivo-Comportamental (TCC)"
+          />
           <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
