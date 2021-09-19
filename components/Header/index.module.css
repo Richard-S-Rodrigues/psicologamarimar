@@ -8,7 +8,7 @@
   padding-bottom: 1em;
   text-align: center;
 
-  background: var(--dark-blue) url("/assets/bg-image-header.svg") no-repeat
+  background: var(--dark-blue) url("/assets/bg-image-header.jpg") no-repeat
     center fixed;
   background-size: cover;
 
