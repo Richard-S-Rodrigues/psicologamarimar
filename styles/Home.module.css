@@ -57,8 +57,9 @@
   flex-direction: column;
   margin-top: 10em;
 
-  background: var(--blue) url("/assets/quote-bg-image.jpg") no-repeat center
-    fixed;
+  background: var(--blue) url("/assets/backup-images/quote-bg-image.jpg")
+    no-repeat center fixed;
+  background-image: url("/assets/quote-bg-image.webp");
   background-size: cover;
 
   color: #fff;
