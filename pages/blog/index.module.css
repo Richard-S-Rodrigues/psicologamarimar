@@ -1,0 +1,74 @@
+.container {
+  width: 100vw;
+  height: auto;
+  display: flex;
+}
+
+.container main {
+  width: 100%;
+}
+
+.postCard {
+  display: block;
+  width: 80%;
+  margin: 2em auto;
+}
+
+.postCard + .postCard {
+  border-top: 5px solid var(--blue);
+  padding-top: 1em;
+}
+
+.postCard div {
+  height: auto;
+}
+
+.postCard div:nth-child(1) h1 {
+  font-weight: 500;
+}
+
+.postCard div:nth-child(1) small {
+  display: flex;
+  justify-content: space-between;
+  width: 7em;
+}
+
+.postCard div:nth-child(2) {
+  max-width: 45em;
+}
+
+.postCard div:nth-child(2) p {
+  line-height: 1.4em;
+  margin: 1em 0;
+  height: 10em;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  word-break: break-word;
+}
+
+.postCard div:nth-child(2) p::before {
+  position: absolute;
+  content: "...";
+  inset-block-end: 0; /* "bottom" */
+  inset-inline-end: 0; /* "right" */
+}
+
+.postCard div:nth-child(2) p::after {
+  content: "";
+  position: absolute;
+  inset-inline-end: 0; /* "right" */
+  width: 1rem;
+  height: 1rem;
+  background: white;
+}
+
+@media (max-width: 380px) {
+  .postCard {
+    width: 90%;
+  }
+
+  .postCard div:nth-child(1) h1 {
+    font-size: 24px;
+  }
+}

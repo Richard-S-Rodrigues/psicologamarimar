@@ -40,6 +40,11 @@ const Header = () => {
                 Contato
               </a>
             </Link>
+            <Link href="/blog">
+              <a className={pathname === "/blog" ? styles.activedLink : ""}>
+                Blog
+              </a>
+            </Link>
           </nav>
         </section>
       </header>
