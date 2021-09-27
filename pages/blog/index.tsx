@@ -1,64 +1,70 @@
 import Image from "next/image";
 
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+
 import styles from "./index.module.css";
 
-const Blog = () => {
+let client = require("contentful").createClient({
+  space: process.env.NEXT_CONTENTFUL_SPACE_ID,
+  accessToken: process.env.NEXT_CONTENTFUL_ACCESS_TOKEN,
+});
+
+export async function getStaticProps() {
+  let data = await client.getEntries({
+    content_type: "blogPosts",
+  });
+
+  return {
+    props: {
+      articles: data.items,
+    },
+  };
+}
+
+const Blog = ({ articles }) => {
+  const formatDate = (dateValue) => {
+    const date = new Date(dateValue);
+
+    const day = date.getDate().toString();
+    const formattedDay = day.length == 1 ? "0" + day : day;
+    const month = (date.getMonth() + 1).toString();
+    const formattedMonth = month.length == 1 ? "0" + month : month;
+    const year = date.getFullYear();
+
+    return formattedDay + "/" + formattedMonth + "/" + year;
+  };
+
   return (
     <div className={styles.container}>
       <main>
-        <div className={styles.postCard}>
-          <div>
-            <h1>Idosos precisam de terapia?</h1>
-            <small>
+        {articles.map((item) => (
+          <div key={item.sys.id} className={styles.postCard}>
+            <div>
+              <h1>{item.fields.title}</h1>
+              <small>
+                <Image
+                  src="/assets/calendar-icon.svg"
+                  alt="Calendário"
+                  width="15"
+                  height="15"
+                  layout="fixed"
+                />
+                {formatDate(item.sys.createdAt)}
+              </small>
+            </div>
+            <div>
               <Image
-                src="/assets/calendar-icon.svg"
-                alt="Calendário"
-                width="15"
-                height="15"
-                layout="fixed"
+                src={`https:${item.fields.coverImage.fields.file.url}`}
+                alt={item.fields.coverImage.title || item.fields.title}
+                width={2400}
+                height={1598}
+                layout="responsive"
               />
-              25/09/2021
-            </small>
+              {documentToReactComponents(item.fields.body.content[0])}
+            </div>
+            <button>LER MAIS</button>
           </div>
-          <div>
-            <Image
-              src="/assets/blog/idodos-tambem-precisam-de-terapia/cover-image.jpg"
-              alt="Idosos precisam de terapia?"
-              width={2400}
-              height={1598}
-              layout="responsive"
-            />
-            <p>
-              Como qualquer faixa etária, a terceira idade também possui suas
-              próprias dores e demandas em saúde mental. Isso significa que,
-              assim como crianças, adolescentes e adultos, os idosos também
-              passam por sofrimento psicológico em decorrência de dua idade, e
-              também carecem de terapia em alguns casos. Para citar um exemplo,
-              o idoso pode apresentar dificuldades em sentir-se pertencente à
-              sociedade, uma vez que seu espaço começa a ficar limitado conforme
-              a idade avança. Em muitos casos o ambiente profissional deixa de
-              ser uma opção com a chegada da aposentadoria, e ambientes de lazer
-              não são prioridade quando a saúde está fragilizada e ficar em casa
-              passa a ser uma "questão de segurança". Outro exemplo comum é o
-              sentimento de solidão, tanto pelas perdas que acumulam-se com o
-              passar da vida, quanto pela dificuldade de comunicação com as
-              gerações mais jovens. O idoso percebe, ao longo dos anos, diversas
-              mudanças sociais, algumas delas são difícies de assimilar porque
-              podem romper com sua visão de mundo. É comum também que haja uma
-              perda ou diminuição de algumas capacidades e habilidades
-              cognitivas e físicas, que também pode levar a um sofrimento
-              psíquico. Um agravante disso é a mudança de tratamento que o idoso
-              sofre, passando a ser visto como um ser frágil, que precisa ser
-              cuidado e muitas vezes é associado à um bebê. Assim, a terapia
-              passar a ser um ambiente de acolhimento, no qual o idoso pode
-              comunicar suas demandas e trabalhar junto ao psicólogo para a
-              resolução ou melhor aceitação de seus problemas. Além disso,
-              também trabalhamos colaborativamente para atenuar ou eliminar
-              sintomas psicológicos, aumentando o bem-estar.
-            </p>
-          </div>
-          <button>LER MAIS</button>
-        </div>
+        ))}
       </main>
     </div>
   );
