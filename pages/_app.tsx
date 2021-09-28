@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Marimar Psicóloga</title>
+        <title>Psicóloga Marimar</title>
       </Head>
       <Header />
       <Component {...pageProps} />
