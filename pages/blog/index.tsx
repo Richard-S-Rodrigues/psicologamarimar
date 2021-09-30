@@ -1,22 +1,18 @@
 import Image from "next/image";
+import Link from "next/link";
+
+import getPosts from "../../lib/getPosts";
 
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 import styles from "./index.module.css";
 
-let client = require("contentful").createClient({
-  space: process.env.NEXT_CONTENTFUL_SPACE_ID,
-  accessToken: process.env.NEXT_CONTENTFUL_ACCESS_TOKEN,
-});
-
 export async function getStaticProps() {
-  let data = await client.getEntries({
-    content_type: "blogPosts",
-  });
+  const data = await getPosts();
 
   return {
     props: {
-      articles: data.items,
+      articles: data,
     },
   };
 }
@@ -53,16 +49,19 @@ const Blog = ({ articles }) => {
               </small>
             </div>
             <div>
-              <Image
-                src={`https:${item.fields.coverImage.fields.file.url}`}
-                alt={item.fields.coverImage.title || item.fields.title}
-                width={2400}
-                height={1598}
-                layout="responsive"
-              />
+              {item.fields.coverImage && (
+                <Image
+                  src={`https:${item.fields.coverImage.fields.file.url}`}
+                  alt={item.fields.coverImage.title || item.fields.title}
+                  width={2400}
+                  height={1598}
+                  layout="responsive"
+                />
+              )}
+
               {documentToReactComponents(item.fields.body.content[0])}
             </div>
-            <button>LER MAIS</button>
+            <Link href={`/blog/${item.fields.slug}`}>LER MAIS</Link>
           </div>
         ))}
       </main>
