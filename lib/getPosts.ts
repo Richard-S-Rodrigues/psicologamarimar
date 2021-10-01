@@ -13,14 +13,10 @@ const getPosts = async () => {
   return data.items;
 };
 
-/*export const getPostBySlug = async (slug) => {
+export const getPostBySlug = async (slug) => {
   const posts = await getPosts();
 
-  posts.forEach((post) => {
-    if (post.fields.slug == slug) {
-      console.log(post);
-    }
-  });
-};*/
+  return posts.find((post: any) => post.fields.slug == slug);
+};
 
 export default getPosts;

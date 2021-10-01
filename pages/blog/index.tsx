@@ -1,7 +1,9 @@
+import { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
 import getPosts from "../../lib/getPosts";
+import formatDate from "../../utils/formatDate";
 
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
@@ -17,19 +19,7 @@ export async function getStaticProps() {
   };
 }
 
-const Blog = ({ articles }) => {
-  const formatDate = (dateValue) => {
-    const date = new Date(dateValue);
-
-    const day = date.getDate().toString();
-    const formattedDay = day.length == 1 ? "0" + day : day;
-    const month = (date.getMonth() + 1).toString();
-    const formattedMonth = month.length == 1 ? "0" + month : month;
-    const year = date.getFullYear();
-
-    return formattedDay + "/" + formattedMonth + "/" + year;
-  };
-
+const Blog: NextPage = ({ articles }: any) => {
   return (
     <div className={styles.container}>
       <main>
