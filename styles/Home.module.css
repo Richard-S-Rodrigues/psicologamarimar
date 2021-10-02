@@ -48,6 +48,18 @@
   margin-top: 1em;
 }
 
+.postsContainer div {
+  padding: 1em;
+}
+
+.postsContainer div + div {
+  border-top: 1px solid #ccc;
+}
+
+.postsContainer div section {
+  width: 100%;
+}
+
 .quote {
   width: 100%;
   height: auto;

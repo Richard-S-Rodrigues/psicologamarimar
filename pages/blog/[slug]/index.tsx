@@ -4,6 +4,7 @@ import Image from "next/image";
 import getPosts, { getPostBySlug } from "../../../lib/getPosts";
 import formatDate from "../../../utils/formatDate";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { BLOCKS } from "@contentful/rich-text-types";
 
 import styles from "./index.module.css";
 
@@ -41,6 +42,7 @@ const BlogPost: NextPage = ({ post }: any) => {
               alt={post.fields.coverImage.title || post.fields.title}
               width={2400}
               height={1598}
+              objectFit="contain"
               layout="responsive"
             />
           </div>
@@ -59,7 +61,21 @@ const BlogPost: NextPage = ({ post }: any) => {
           </small>
         </section>
         <section className={styles.bodyContent}>
-          {documentToReactComponents(post.fields.body)}
+          {documentToReactComponents(post.fields.body, {
+            renderNode: {
+              // eslint-disable-next-line react/display-name
+              [BLOCKS.EMBEDDED_ASSET]: (node: any) => {
+                return (
+                  <Image
+                    src={`https:${node.data.target.fields.file.url}`}
+                    alt=""
+                    width={600}
+                    height={400}
+                  />
+                );
+              },
+            },
+          })}
         </section>
       </main>
     </div>

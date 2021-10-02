@@ -25,26 +25,26 @@ const Blog: NextPage = ({ articles }: any) => {
       <main>
         {articles.map((item) => (
           <div key={item.sys.id} className={styles.postCard}>
-            <div>
+            <div className={styles.titleContainer}>
               <h1>{item.fields.title}</h1>
               <small>
                 <Image
                   src="/assets/calendar-icon.svg"
                   alt="Calendário"
-                  width="15"
-                  height="15"
+                  width="14"
+                  height="14"
                   layout="fixed"
                 />
                 {formatDate(item.sys.createdAt)}
               </small>
             </div>
-            <div>
+            <div className={styles.bodyContent}>
               {item.fields.coverImage && (
                 <Image
                   src={`https:${item.fields.coverImage.fields.file.url}`}
                   alt={item.fields.coverImage.title || item.fields.title}
-                  width={2400}
-                  height={1598}
+                  width={2100}
+                  height={1298}
                   layout="responsive"
                 />
               )}

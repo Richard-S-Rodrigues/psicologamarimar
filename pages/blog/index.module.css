@@ -14,8 +14,24 @@
   margin: 3em auto;
 }
 
+.postCard a {
+  cursor: pointer;
+  border: 0;
+  background-color: var(--blue);
+  color: var(--light-blue);
+  padding: 0.5em;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.4s;
+}
+
+.postCard a:hover {
+  text-decoration: none;
+  background-color: var(--dark-blue);
+}
+
 .postCard + .postCard {
-  border-top: 2px solid var(--blue);
+  border-top: 1px solid #ccc;
   padding-top: 1em;
 }
 
@@ -23,23 +39,23 @@
   height: auto;
 }
 
-.postCard div:nth-child(1) h1 {
+.titleContainer h1 {
   font-weight: 500;
 }
 
-.postCard div:nth-child(1) small {
+.titleContainer small {
   display: flex;
   justify-content: space-between;
   width: 7em;
 }
 
-.postCard div:nth-child(2) {
+.bodyContent {
   max-width: 45em;
 }
 
-.postCard div:nth-child(2) p {
+.bodyContent p {
   line-height: 1.4em;
-  margin: 1em 0;
+  margin: 1.5em 0;
   height: auto;
   max-height: 10em;
   overflow: hidden;
@@ -48,14 +64,14 @@
   word-break: break-word;
 }
 
-.postCard div:nth-child(2) p::before {
+.bodyContent p::before {
   position: absolute;
   content: "...";
   inset-block-end: 0; /* "bottom" */
   inset-inline-end: 0; /* "right" */
 }
 
-.postCard div:nth-child(2) p::after {
+.bodyContent p::after {
   content: "";
   position: absolute;
   inset-inline-end: 0; /* "right" */
@@ -69,7 +85,7 @@
     width: 90%;
   }
 
-  .postCard div:nth-child(1) h1 {
+  .titleContainer h1 {
     font-size: 24px;
   }
 }
