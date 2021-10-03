@@ -12,7 +12,7 @@ const Atuacao: NextPage = () => (
     <div className={styles.container}>
       <main>
         <h1>Terapia Cognitivo-Comportamental (TCC)</h1>
-        <div className={styles.text1}>
+        <div>
           <p>
             É comum pensar que a psicologia é algo &quot;único&quot; e será
             aplicada na terapia da mesma forma por todo e qualquer psicólogo. No
@@ -21,15 +21,13 @@ const Atuacao: NextPage = () => (
             diferentes abordagens, e cada psicólogo utiliza-se de pelo menos uma
             delas em sua atuação.
           </p>
-          <p>
-            <Image
-              src="/assets/brain-icon.svg"
-              alt="Ícone cérebro"
-              width="200"
-              height="200"
-              layout="fixed"
-            />
-          </p>
+          <Image
+            src="/assets/brain-icon.svg"
+            alt="Ícone cérebro"
+            width="700"
+            height="150"
+            layout="fixed"
+          />
         </div>
         <div>
           <p>
@@ -42,16 +40,14 @@ const Atuacao: NextPage = () => (
             como interpretamos essa situação.{" "}
           </p>
         </div>
-        <div className={styles.text2}>
-          <p>
-            <Image
-              src="/assets/brain-icon-2.svg"
-              alt="Ícone cérebro - 2"
-              width="200"
-              height="200"
-              layout="fixed"
-            />
-          </p>
+        <div>
+          <Image
+            src="/assets/brain-icon-2.svg"
+            alt="Ícone cérebro - 2"
+            width="800"
+            height="150"
+            layout="fixed"
+          />
           <p>
             As teorias e métodos da TCC foram desenvolvidos inicialmente pelo
             médico e psicanalista Aaron T. Beck por volta das décadas de 1960 e

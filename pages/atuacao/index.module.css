@@ -1,14 +1,12 @@
 .container {
   width: 100vw;
   height: 100vh;
-  display: inline-table;
+  display: inline;
   margin: 0 auto;
-  background: url("/assets/light-blue-wave.svg") no-repeat bottom;
-  background-size: max(150em, 100%);
 }
 
 .container main {
-  width: 80%;
+  width: min(60em, 90%);
   margin: 0 auto;
   display: block;
   margin-bottom: 5em;
@@ -22,35 +20,18 @@
 
 .container main div {
   width: 100%;
-  display: inline-flex;
+  display: flex;
+  align-items: center;
 }
 
 .container main div p {
+  display: flex;
   width: auto;
+  margin-top: 1em;
   font-size: 18px;
   line-height: 1.8;
   text-align: justify;
   text-justify: inter-word;
-}
-
-.text1 {
-  margin-bottom: 0.5em;
-}
-
-.text2 {
-  margin-top: 2em;
-}
-
-.text1 p:last-child {
-  margin-left: 1em;
-}
-
-.text2 p:first-child {
-  margin-right: 1em;
-}
-
-.container main div div {
-  width: 50%;
 }
 
 @media (max-width: 692px) {
@@ -59,7 +40,7 @@
   }
 
   .container main div {
-    display: block;
+    flex-direction: column;
   }
 
   .container main div p {
