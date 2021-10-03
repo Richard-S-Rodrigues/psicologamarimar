@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -6,6 +7,9 @@ import styles from "./index.module.css";
 
 const About: NextPage = () => (
   <>
+    <Head>
+      <title>Psicóloga Marimar - Sobre</title>
+    </Head>
     <div className={styles.container}>
       <main>
         <div className={styles.textContainer}>

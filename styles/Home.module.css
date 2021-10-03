@@ -38,10 +38,17 @@
 }
 
 .postsContainer {
-  text-align: center;
+  text-align: left;
+  padding: 1em;
   margin-top: 3em;
   border-left: 1px solid #ddd;
   color: var(--dark-blue);
+}
+
+.postsContainer h1 {
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  padding-bottom: 1em;
 }
 
 .postsContainer p {
@@ -49,15 +56,28 @@
 }
 
 .postsContainer div {
-  padding: 1em;
-}
-
-.postsContainer div + div {
-  border-top: 1px solid #ccc;
+  padding: 1em 0;
 }
 
 .postsContainer div section {
   width: 100%;
+}
+
+.postTitleContainer a {
+  cursor: pointer;
+  transition: color 0.5s;
+}
+
+.postTitleContainer a:hover {
+  color: var(--yellow);
+}
+
+.postTitleContainer small {
+  color: #797979;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 7em;
 }
 
 .quote {
@@ -127,5 +147,15 @@
 @media (max-width: 542px) {
   .quote p {
     width: 80%;
+  }
+}
+
+@media (max-width: 362px) {
+  .postsContainer h1 {
+    font-size: 1.2rem;
+  }
+
+  .postTitleContainer h2 {
+    font-size: 18px;
   }
 }

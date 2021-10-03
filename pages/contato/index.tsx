@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Head from "next/head";
 import { useState } from "react";
 import { AsYouType } from "libphonenumber-js";
 import ReactLoading from "react-loading";
@@ -70,94 +71,99 @@ const Contact: NextPage = () => {
   };
 
   return (
-    <div className={styles.container}>
-      {isSent && (
-        <div className={`${styles.success} ${styles.hide}`}>
-          Dúvida enviada com sucesso!
-        </div>
-      )}
-      {isError && (
-        <div className={`${styles.fail} ${styles.hide}`}>
-          Algo deu errado. Tente novamente!
-        </div>
-      )}
-      <main>
-        <div className={styles.formContainer}>
-          <h2>Tire suas dúvidas pelo formulário</h2>
-          <form onSubmit={onSubmitHandler}>
-            <div>
-              <label htmlFor="name">NOME*</label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                value={name}
-                onChange={(event) => setName(event.target.value)}
-                required
+    <>
+      <Head>
+        <title>Psicóloga Marimar - Contato</title>
+      </Head>
+      <div className={styles.container}>
+        {isSent && (
+          <div className={`${styles.success} ${styles.hide}`}>
+            Dúvida enviada com sucesso!
+          </div>
+        )}
+        {isError && (
+          <div className={`${styles.fail} ${styles.hide}`}>
+            Algo deu errado. Tente novamente!
+          </div>
+        )}
+        <main>
+          <div className={styles.formContainer}>
+            <h2>Tire suas dúvidas pelo formulário</h2>
+            <form onSubmit={onSubmitHandler}>
+              <div>
+                <label htmlFor="name">NOME*</label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  value={name}
+                  onChange={(event) => setName(event.target.value)}
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="email">E-MAIL*</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="phoneNumber">CELULAR</label>
+                <input
+                  type="text"
+                  name="phoneNumber"
+                  id="phoneNumber"
+                  placeholder="(00) 00000-0000"
+                  value={phoneNumber}
+                  maxLength={15}
+                  onChange={(event) => {
+                    setPhoneNumber(Utils.formatPhoneNumber(event.target.value));
+                  }}
+                />
+              </div>
+              <div>
+                <label htmlFor="message">MENSAGEM*</label>
+                <textarea
+                  name="message"
+                  id="message"
+                  value={message}
+                  onChange={(event) => setMessage(event.target.value)}
+                  required
+                />
+              </div>
+              <button type="submit">ENVIAR</button>
+            </form>
+            {isLoading && (
+              <ReactLoading
+                type="bubbles"
+                color="#053E6B"
+                height={"200px"}
+                width={"200px"}
               />
-            </div>
-            <div>
-              <label htmlFor="email">E-MAIL*</label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="phoneNumber">CELULAR</label>
-              <input
-                type="text"
-                name="phoneNumber"
-                id="phoneNumber"
-                placeholder="(00) 00000-0000"
-                value={phoneNumber}
-                maxLength={15}
-                onChange={(event) => {
-                  setPhoneNumber(Utils.formatPhoneNumber(event.target.value));
-                }}
-              />
-            </div>
-            <div>
-              <label htmlFor="message">MENSAGEM*</label>
-              <textarea
-                name="message"
-                id="message"
-                value={message}
-                onChange={(event) => setMessage(event.target.value)}
-                required
-              />
-            </div>
-            <button type="submit">ENVIAR</button>
-          </form>
-          {isLoading && (
-            <ReactLoading
-              type="bubbles"
-              color="#053E6B"
-              height={"200px"}
-              width={"200px"}
-            />
-          )}
-        </div>
-        <div className={styles.contactContainer}>
-          <h2>Ou mande mensagem para:</h2>
-          <ul>
-            <li>
-              <h3>E-mail</h3>
-              <p>marimarnascimento@gmail.com</p>
-            </li>
+            )}
+          </div>
+          <div className={styles.contactContainer}>
+            <h2>Ou mande mensagem para:</h2>
+            <ul>
+              <li>
+                <h3>E-mail</h3>
+                <p>marimarnascimento@gmail.com</p>
+              </li>
 
-            <li>
-              <h3>Whatsapp</h3>
-              <p>(21) 97400-9839</p>
-            </li>
-          </ul>
-        </div>
-      </main>
-    </div>
+              <li>
+                <h3>Whatsapp</h3>
+                <p>(21) 97400-9839</p>
+              </li>
+            </ul>
+          </div>
+        </main>
+      </div>
+    </>
   );
 };
 

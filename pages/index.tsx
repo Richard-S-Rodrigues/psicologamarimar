@@ -1,9 +1,9 @@
 import type { GetStaticProps, NextPage } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 import getPosts from "../lib/getPosts";
 import formatDate from "../utils/formatDate";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 import styles from "../styles/Home.module.css";
 
@@ -16,7 +16,6 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const Home: NextPage = ({ posts }: any) => {
-  console.log(posts);
   return (
     <div className={styles.container}>
       <main>
@@ -52,14 +51,18 @@ const Home: NextPage = ({ posts }: any) => {
           </div>
         </section>
         <section className={styles.postsContainer}>
-          <h2>POSTAGENS RECENTES</h2>
+          <h1>POSTAGENS RECENTES</h1>
           {!posts.length ? (
             <p>Nenhuma postagem criada ainda</p>
           ) : (
             posts.map((post) => (
               <div key={post.sys.id}>
                 <section className={styles.postTitleContainer}>
-                  <h2>{post.fields.title}</h2>
+                  <Link href={`/blog/${post.fields.slug}`} passHref>
+                    <a>
+                      <h2>{post.fields.title}</h2>
+                    </a>
+                  </Link>
                   <small>
                     <Image
                       src="/assets/calendar-icon.svg"
@@ -70,9 +73,6 @@ const Home: NextPage = ({ posts }: any) => {
                     />
                     {formatDate(post.sys.createdAt)}
                   </small>
-                </section>
-                <section className={styles.postBodyContainer}>
-                  {documentToReactComponents(post.fields.body.content[0])}
                 </section>
               </div>
             ))
