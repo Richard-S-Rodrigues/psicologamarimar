@@ -65,13 +65,29 @@ const Blog: NextPage = ({ articles }: any) => {
               </div>
               <div className={styles.bodyContent}>
                 {item.fields.coverImage && (
-                  <Image
-                    src={`https:${item.fields.coverImage.fields.file.url}`}
-                    alt={item.fields.coverImage.title || item.fields.title}
-                    width={2100}
-                    height={1298}
-                    layout="responsive"
-                  />
+                  <>
+                    <Image
+                      src={`https:${item.fields.coverImage.fields.file.url}`}
+                      alt={item.fields.coverImage.title || item.fields.title}
+                      width={2100}
+                      height={1298}
+                      layout="responsive"
+                    />
+                    <a
+                      href={item.fields.coverImage.fields.description}
+                      style={{
+                        display: "flex",
+
+                        fontSize: "0.7rem",
+                        justifyContent: "center",
+                        color: "#ccc",
+                      }}
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      {item.fields.coverImage.fields.description}
+                    </a>
+                  </>
                 )}
 
                 {documentToReactComponents(item.fields.body.content[0])}

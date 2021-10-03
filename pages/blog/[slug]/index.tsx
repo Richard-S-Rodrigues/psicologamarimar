@@ -61,6 +61,19 @@ const BlogPost: NextPage = ({ post }: any) => {
                 objectFit="contain"
                 layout="responsive"
               />
+              <a
+                href={post.fields.coverImage.fields.description}
+                style={{
+                  display: "flex",
+                  fontSize: "0.7rem",
+                  justifyContent: "center",
+                  color: "#ccc",
+                }}
+                rel="noreferrer"
+                target="_blank"
+              >
+                {post.fields.coverImage.fields.description}
+              </a>
             </div>
           )}
           <section className={styles.titleContainer}>
