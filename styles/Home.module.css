@@ -31,8 +31,7 @@
   margin: auto;
 }
 
-.imgContainer div h2 {
-  font-size: 18px;
+.imgContainer div h1 {
   text-align: center;
   line-height: 1.5;
 }
@@ -153,6 +152,10 @@
 }
 
 @media (max-width: 362px) {
+  .text h1 {
+    font-size: 1rem;
+  }
+
   .postsContainer h1 {
     font-size: 1.2rem;
   }

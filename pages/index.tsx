@@ -32,10 +32,11 @@ const Home: NextPage = ({ posts }: any) => {
               href="https://br.freepik.com/vetores/internet"
               style={{
                 display: "flex",
-                fontSize: "12px",
+                fontSize: "0.7rem",
                 justifyContent: "center",
                 marginTop: 0,
                 marginBottom: "2em",
+                color: "#ccc",
               }}
               rel="noreferrer"
               target="_blank"
@@ -44,10 +45,10 @@ const Home: NextPage = ({ posts }: any) => {
             </a>
           </div>
           <div className={styles.text}>
-            <h2>
+            <h1>
               Acompanhamento psicoterapêutico online, para cuidar da sua saúde
               mental no conforto da sua casa.
-            </h2>
+            </h1>
           </div>
         </section>
         <section className={styles.postsContainer}>
