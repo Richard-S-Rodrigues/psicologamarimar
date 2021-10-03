@@ -5,12 +5,12 @@
 }
 
 .container main {
-  width: 100%;
+  width: min(50em, 90%);
+  margin: auto;
 }
 
 .postCard {
   display: block;
-  width: 80%;
   margin: 3em auto;
 }
 
@@ -54,6 +54,7 @@
 }
 
 .bodyContent p {
+  font-size: 1.2rem;
   line-height: 1.4em;
   margin: 1.5em 0;
   height: auto;
