@@ -13,15 +13,6 @@ import styles from "./index.module.css";
 export async function getStaticProps() {
   const data = await getPosts();
 
-  if (!data.length) {
-    return {
-      redirect: {
-        destination: "/",
-        permanent: false,
-      },
-    };
-  }
-
   return {
     props: {
       articles: data,
@@ -43,6 +34,20 @@ const Blog: NextPage = ({ articles }: any) => {
       </Head>
       <div className={styles.container}>
         <main>
+          {!articles.length && (
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                fontSize: "18px",
+                fontWeight: 600,
+                margin: "5em",
+              }}
+            >
+              Nenhuma postagem encontrada
+            </div>
+          )}
           {articles.map((item) => (
             <div key={item.sys.id} className={styles.postCard}>
               <div className={styles.titleContainer}>
