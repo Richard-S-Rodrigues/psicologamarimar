@@ -13,6 +13,15 @@ import styles from "./index.module.css";
 export async function getStaticProps() {
   const data = await getPosts();
 
+  if (!data.length) {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
+    };
+  }
+
   return {
     props: {
       articles: data,
