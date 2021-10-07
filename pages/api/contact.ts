@@ -32,7 +32,7 @@ export default function (req: Request, res: Response) {
 
     const mailOptions: MailOptionsData = {
       from: email,
-      to: "marimarnascimento@gmail.com",
+      to: "richardsouzarodrigues555@gmail.com",
       subject: "psicoterapia",
       text: phoneNumber
         ? `
@@ -50,15 +50,14 @@ export default function (req: Request, res: Response) {
       `,
     };
 
-    transporter.sendMail(mailOptions, function (err: any, info: any) {
+    transporter.sendMail(mailOptions, async function (err: any, info: any) {
       if (err) {
         console.log(err);
         return res.status(400).send();
-      } else {
-        console.log(`Email sent: ${info.response}`);
-
-        return res.status(201).send();
       }
+      console.log(`Email sent: ${info.response}`);
+
+      return res.status(201).send();
     });
   } catch (error) {
     console.log("Error: ", error);
