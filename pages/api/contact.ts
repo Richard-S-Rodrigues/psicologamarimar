@@ -28,7 +28,7 @@ export default function (req: Request, res: Response) {
       secure: true,
       auth: {
         user: "marimarnascimento@gmail.com",
-        pass: process.env.PASS,
+        pass: process.env.NEXT_PUBLIC_PASS,
       },
     });
 
