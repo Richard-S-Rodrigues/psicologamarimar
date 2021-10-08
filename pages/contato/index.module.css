@@ -14,8 +14,11 @@
   height: 100%;
 }
 
-.formContainer {
+.container main div {
   padding: 1em;
+}
+
+.formContainer {
   margin-bottom: 2em;
   width: 100%;
 }
