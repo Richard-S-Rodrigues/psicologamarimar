@@ -34,7 +34,7 @@ export default function (req: Request, res: Response) {
 
     const mailOptions: MailOptionsData = {
       from: email,
-      to: "marimarnascimento@gmail.com",
+      to: "richardsouzarodrigues555@gmail.com",
       subject: "psicoterapia",
       text: phoneNumber
         ? `
