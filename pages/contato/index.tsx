@@ -34,7 +34,10 @@ const Contact: NextPage = () => {
         setMessage(value);
         break;
       default:
-        break;
+        setName("");
+        setEmail("");
+        setPhoneNumber("");
+        setMessage("");
     }
   };
 
