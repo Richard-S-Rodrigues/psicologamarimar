@@ -17,30 +17,6 @@ const Contact: NextPage = () => {
 
   const [isLoading, setIsLoading] = useState(false);
 
-  const onChangeHandler = (event) => {
-    const { name, value } = event.target;
-
-    switch (name) {
-      case "name":
-        setName(value);
-        break;
-      case "email":
-        setEmail(value);
-        break;
-      case "phoneNumber":
-        setPhoneNumber(Utils.formatPhoneNumber(value));
-        break;
-      case "message":
-        setMessage(value);
-        break;
-      default:
-        setName("");
-        setEmail("");
-        setPhoneNumber("");
-        setMessage("");
-    }
-  };
-
   const onSubmitHandler = (event: any) => {
     event.preventDefault();
 
@@ -121,7 +97,9 @@ const Contact: NextPage = () => {
                   name="name"
                   id="name"
                   value={name}
-                  onChange={onChangeHandler}
+                  onChange={(event) => {
+                    setName(event.target.value);
+                  }}
                   required
                 />
               </div>
@@ -132,7 +110,9 @@ const Contact: NextPage = () => {
                   name="email"
                   id="email"
                   value={email}
-                  onChange={onChangeHandler}
+                  onChange={(event) => {
+                    setEmail(event.target.value);
+                  }}
                   required
                 />
               </div>
@@ -145,7 +125,9 @@ const Contact: NextPage = () => {
                   placeholder="(00) 00000-0000"
                   value={phoneNumber}
                   maxLength={15}
-                  onChange={onChangeHandler}
+                  onChange={(event) => {
+                    setPhoneNumber(Utils.formatPhoneNumber(event.target.value));
+                  }}
                 />
               </div>
               <div>
@@ -154,7 +136,9 @@ const Contact: NextPage = () => {
                   name="message"
                   id="message"
                   value={message}
-                  onChange={onChangeHandler}
+                  onChange={(event) => {
+                    setMessage(event.target.value);
+                  }}
                   required
                 />
               </div>
