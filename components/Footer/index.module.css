@@ -54,6 +54,10 @@
   align-items: center;
 }
 
+.aboutContainer div:first-child div h1 {
+  text-align: center;
+}
+
 .aboutContainer div:first-child img {
   border-radius: 50%;
 }
@@ -112,5 +116,9 @@
     width: 100%;
     text-align: initial;
     word-wrap: anywhere;
+  }
+
+  .aboutContainer div:first-child div h1 {
+    font-size: 1.2rem;
   }
 }
