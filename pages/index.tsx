@@ -36,7 +36,7 @@ const Home: NextPage = ({ posts }: any) => {
                 justifyContent: "center",
                 marginTop: 0,
                 marginBottom: "2em",
-                color: "#ccc",
+                color: "#a6a6a6",
               }}
               rel="noreferrer"
               target="_blank"
