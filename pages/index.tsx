@@ -27,6 +27,7 @@ const Home: NextPage = ({ posts }: any) => {
               width="100"
               height="100"
               layout="responsive"
+              priority={true}
             />
             <a
               href="https://br.freepik.com/vetores/internet"
