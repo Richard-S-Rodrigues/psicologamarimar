@@ -8,8 +8,9 @@
   padding-bottom: 1em;
   text-align: center;
 
-  background: var(--dark-blue) url("/assets/backup-images/bg-image-header.jpg")
-    no-repeat center fixed;
+  background: var(--dark-blue);
+  background-image: url("/assets/backup-images/bg-image-header.jpg") no-repeat
+    center fixed;
   background-image: url("/assets/bg-image-header.webp");
   background-size: cover;
 
