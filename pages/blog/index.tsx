@@ -1,12 +1,9 @@
 import { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
 
 import getPosts from "../../lib/getPosts";
-import formatDate from "../../utils/formatDate";
 
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import PostCard from "../../components/PostCard";
 
 import styles from "./index.module.css";
 
@@ -49,51 +46,17 @@ const Blog: NextPage = ({ articles }: any) => {
             </div>
           )}
           {articles.map((item) => (
-            <div key={item.sys.id} className={styles.postCard}>
-              <div className={styles.titleContainer}>
-                <h1>{item.fields.title}</h1>
-                <small>
-                  <Image
-                    src="/assets/calendar-icon.svg"
-                    alt="Calendário"
-                    width="14"
-                    height="14"
-                    layout="fixed"
-                  />
-                  {formatDate(item.sys.createdAt)}
-                </small>
-              </div>
-              <div className={styles.bodyContent}>
-                {item.fields.coverImage && (
-                  <>
-                    <Image
-                      src={`https:${item.fields.coverImage.fields.file.url}`}
-                      alt={item.fields.coverImage.title || item.fields.title}
-                      width={2100}
-                      height={1298}
-                      layout="responsive"
-                    />
-                    <a
-                      href={item.fields.coverImage.fields.description}
-                      style={{
-                        display: "flex",
-
-                        fontSize: "0.7rem",
-                        justifyContent: "center",
-                        color: "#ccc",
-                      }}
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      {item.fields.coverImage.fields.description}
-                    </a>
-                  </>
-                )}
-
-                {documentToReactComponents(item.fields.body.content[0])}
-              </div>
-              <Link href={`/blog/${item.fields.slug}`}>LER MAIS</Link>
-            </div>
+            <PostCard
+              key={item.sys.id}
+              title={item.fields.title}
+              createdDate={item.sys.createdAt}
+              coverImage={item.fields.coverImage}
+              imageUrl={item.fields.coverImage.fields.file.url}
+              imageTitle={item.fields.coverImage.title}
+              imageDescription={item.fields.coverImage.fields.description}
+              firstParagraph={item.fields.body.content[0]}
+              postSlug={item.fields.slug}
+            />
           ))}
         </main>
       </div>

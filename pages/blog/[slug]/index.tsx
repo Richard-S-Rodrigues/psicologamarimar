@@ -49,7 +49,7 @@ const BlogPost: NextPage = ({ post }: any) => {
           <meta property="og:type" content="website" />
         </Head>
       </Head>
-      <div className={styles.container}>
+      <article className={styles.container}>
         <main>
           {post.fields.coverImage && (
             <div className={styles.imageContainer}>
@@ -107,7 +107,7 @@ const BlogPost: NextPage = ({ post }: any) => {
             })}
           </section>
         </main>
-      </div>
+      </article>
     </>
   );
 };
