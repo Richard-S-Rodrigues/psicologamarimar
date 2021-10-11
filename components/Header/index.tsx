@@ -9,6 +9,15 @@ const Header = () => {
 
   return (
     <div className={styles.container}>
+      <Image
+        className={styles.landingImage}
+        src="/assets/backup-images/bg-image-header.jpg"
+        alt=""
+        layout="fill"
+        objectFit="cover"
+        objectPosition="center"
+        priority={true}
+      />
       <header>
         <section className={styles.titleContainer}>
           <div>

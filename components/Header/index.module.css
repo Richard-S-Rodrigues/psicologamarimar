@@ -9,12 +9,14 @@
   text-align: center;
 
   background: var(--dark-blue);
-  background-image: url("/assets/backup-images/bg-image-header.jpg") no-repeat
-    center fixed;
-  background-image: url("/assets/bg-image-header.webp");
-  background-size: cover;
 
   color: #fff;
+
+  position: relative;
+}
+
+.landingImage {
+  z-index: 0;
 }
 
 .container header {
@@ -23,10 +25,12 @@
   border-bottom: 1px solid rgb(184, 184, 184);
   padding-bottom: 1.5em;
   margin-bottom: 2em;
+  z-index: 1;
 }
 
 .container section {
   margin-top: 1em;
+  z-index: 1;
 }
 
 .container section button {
