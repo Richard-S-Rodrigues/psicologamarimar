@@ -22,7 +22,7 @@ const Home: NextPage = ({ posts }: any) => {
         <section className={styles.imgContainer}>
           <div className={styles.image}>
             <Image
-              src="/assets/online-therapy.jpg"
+              src="/assets/online-therapy.png"
               alt="Terapia online"
               width="100"
               height="100"
