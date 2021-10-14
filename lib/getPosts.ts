@@ -9,6 +9,7 @@ const getPosts = async (postsLimit?: number) => {
   const data = await client.getEntries({
     content_type: "posts",
     limit: postsLimit,
+    order: "-sys.createdAt",
   });
 
   return data.items;
