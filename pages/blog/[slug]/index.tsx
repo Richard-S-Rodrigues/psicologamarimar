@@ -111,7 +111,7 @@ const BlogPost: NextPage = ({ post }: any) => {
                                 <iframe 
                                     title="YouTube video player" 
                                     src={uri} 
-                                    frameborder="0" 
+                                    frameBorder="0" 
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                     allowfullscreen>
                                 </iframe>
