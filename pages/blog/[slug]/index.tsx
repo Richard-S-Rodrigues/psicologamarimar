@@ -5,7 +5,7 @@ import Image from "next/image";
 import getPosts, { getPostBySlug } from "../../../lib/getPosts";
 import formatDate from "../../../utils/formatDate";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { BLOCKS } from "@contentful/rich-text-types";
+import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 
 import styles from "./index.module.css";
 
@@ -103,6 +103,23 @@ const BlogPost: NextPage = ({ post }: any) => {
                     />
                   );
                 },
+                [INLINES.HYPERLINK]: (node) => {
+                     if((node.data.uri).includes("youtube.com")) {
+                         const uri = node.data.uri.replace("watch?v=", "embed/");
+                         return (
+                            <span className={styles.imageFrameContainer}>
+                                <iframe 
+                                    title="YouTube video player" 
+                                    src={uri} 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                                </iframe>
+                            </span>
+                        )
+                     }
+                 }
+
               },
             })}
           </section>

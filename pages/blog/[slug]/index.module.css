@@ -44,6 +44,21 @@
   margin: 1em auto;
 }
 
+.imageFrameContainer {
+   padding-bottom: 56.25%; 
+   position: relative; 
+   display: block; 
+   width: 100%;
+}
+
+.imageFrameContainer iframe {
+   height: 100%;
+   width: 100%;
+   position: absolute; 
+   top: 0; 
+   left: 0;
+}
+
 @media (max-width: 660px) {
   .titleContainer h1 {
     font-size: 1.8rem;

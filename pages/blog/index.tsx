@@ -41,19 +41,22 @@ const Blog: NextPage = ({ articles }: any) => (
             Nenhuma postagem encontrada
           </div>
         )}
-        {articles.map((item) => (
-          <PostCard
-            key={item.sys.id}
-            title={item.fields.title}
-            createdDate={item.sys.createdAt}
-            coverImage={item.fields.coverImage}
-            imageUrl={item.fields.coverImage.fields.file.url}
-            imageTitle={item.fields.coverImage.title}
-            imageDescription={item.fields.coverImage.fields.description}
-            firstParagraph={item.fields.body.content[0]}
-            postSlug={item.fields.slug}
-          />
-        ))}
+        {articles.map((item) => {
+            const coverImage = item.fields.coverImage;
+            return (
+            <PostCard
+                key={item.sys.id}
+                title={item.fields.title}
+                createdDate={item.sys.createdAt}
+                coverImage={coverImage}
+                imageUrl={coverImage?.fields.file.url}
+                imageTitle={coverImage?.title}
+                imageDescription={coverImage?.fields.description}
+                firstParagraph={item.fields.body.content[0]}
+                postSlug={item.fields.slug}
+            />
+            )
+        })}
       </main>
     </div>
   </>
