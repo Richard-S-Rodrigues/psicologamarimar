@@ -103,7 +103,8 @@ const BlogPost: NextPage = ({ post }: any) => {
                     />
                   );
                 },
-                [INLINES.HYPERLINK]: (node) => {
+                // eslint-disable-next-line react/display-name
+                [INLINES.HYPERLINK]: (node: any) => {
                      if((node.data.uri).includes("youtube.com/watch?v=")) {
                          const uri = node.data.uri.replace("watch?v=", "embed/");
                          return (
