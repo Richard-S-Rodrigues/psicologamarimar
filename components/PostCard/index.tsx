@@ -71,6 +71,7 @@ const PostCard = ({
 
       {documentToReactComponents(firstParagraph, {
         renderNode: {
+          // eslint-disable-next-line react/display-name
           [INLINES.HYPERLINK]: (node: any) => {
             const uri = node.data.uri.replace("watch?v=", "embed/");                         
             if((node.data.uri).includes("youtube.com/watch?v=")) {
