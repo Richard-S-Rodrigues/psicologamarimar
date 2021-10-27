@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import formatDate from "../../utils/formatDate";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 
 import styles from "./index.module.css";
 
@@ -68,7 +69,26 @@ const PostCard = ({
         </>
       )}
 
-      {documentToReactComponents(firstParagraph)}
+      {documentToReactComponents(firstParagraph, {
+        renderNode: {
+          [INLINES.HYPERLINK]: (node: any) => {
+            const uri = node.data.uri.replace("watch?v=", "embed/");                         
+            if((node.data.uri).includes("youtube.com/watch?v=")) {
+              return (
+                <span>
+                  <iframe
+                    title="YouTube video player" 
+                    src={uri} 
+                    frameBorder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowFullScreen>
+                  </iframe>
+                </span>
+              )
+            }
+          }
+        }
+      })}
     </div>
     <Link href={`/blog/${postSlug}`}>LER MAIS</Link>
   </article>
