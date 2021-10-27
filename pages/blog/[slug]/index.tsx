@@ -104,7 +104,7 @@ const BlogPost: NextPage = ({ post }: any) => {
                   );
                 },
                 [INLINES.HYPERLINK]: (node) => {
-                     if((node.data.uri).includes("youtube.com")) {
+                     if((node.data.uri).includes("youtube.com/watch?v=")) {
                          const uri = node.data.uri.replace("watch?v=", "embed/");
                          return (
                             <span className={styles.imageFrameContainer}>
@@ -113,7 +113,7 @@ const BlogPost: NextPage = ({ post }: any) => {
                                     src={uri} 
                                     frameBorder="0" 
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                    allowfullscreen>
+                                    allowFullScreen>
                                 </iframe>
                             </span>
                         )
