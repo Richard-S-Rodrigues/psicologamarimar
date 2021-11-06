@@ -68,28 +68,7 @@ const PostCard = ({
           </a>
         </>
       )}
-
-      {documentToReactComponents(firstParagraph, {
-        renderNode: {
-          // eslint-disable-next-line react/display-name
-          [INLINES.HYPERLINK]: (node: any) => {
-            const uri = node.data.uri.replace("watch?v=", "embed/");                         
-            if((node.data.uri).includes("youtube.com/watch?v=")) {
-              return (
-                <span>
-                  <iframe
-                    title="YouTube video player" 
-                    src={uri} 
-                    frameBorder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowFullScreen>
-                  </iframe>
-                </span>
-              )
-            }
-          }
-        }
-      })}
+      {firstParagraph}
     </div>
     <Link href={`/blog/${postSlug}`}>LER MAIS</Link>
   </article>

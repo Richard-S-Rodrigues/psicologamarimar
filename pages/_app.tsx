@@ -3,7 +3,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 
-import * as gtag from "../lib/gtag";
+import * as gtag from "../services/gtag";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";

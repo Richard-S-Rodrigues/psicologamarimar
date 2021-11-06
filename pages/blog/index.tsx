@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import Head from "next/head";
 
-import getPosts from "../../lib/getPosts";
+import { getPosts } from "../../services/getPosts";
 
 import PostCard from "../../components/PostCard";
 
@@ -17,49 +17,56 @@ export async function getStaticProps() {
   };
 }
 
-const Blog: NextPage = ({ articles }: any) => (
-  <>
-    <Head>
-      <title>Psicóloga Marimar - Blog</title>
-      <meta property="og:title" content="Psicóloga Marimar - Blog" />
-      <meta property="og:url" content="https://www.psicologamarimar.com/blog" />
-      <meta property="og:type" content="website" />
-    </Head>
-    <div className={styles.container}>
-      <main>
-        {!articles.length && (
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              fontSize: "18px",
-              fontWeight: 600,
-              margin: "5em",
-            }}
-          >
-            Nenhuma postagem encontrada
-          </div>
-        )}
-        {articles.map((item) => {
-            const coverImage = item.fields.coverImage;
+const Blog: NextPage = ({ articles }: any) => {
+  console.log(articles);
+
+  return (
+    <>
+      <Head>
+        <title>Psicóloga Marimar - Blog</title>
+        <meta property="og:title" content="Psicóloga Marimar - Blog" />
+        <meta
+          property="og:url"
+          content="https://www.psicologamarimar.com/blog"
+        />
+        <meta property="og:type" content="website" />
+      </Head>
+      <div className={styles.container}>
+        <main>
+          {!articles.length && (
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                fontSize: "18px",
+                fontWeight: 600,
+                margin: "5em",
+              }}
+            >
+              Nenhuma postagem encontrada
+            </div>
+          )}
+          {articles.map((item) => {
+            const coverImage = item.node.coverImage[0];
             return (
-            <PostCard
-                key={item.sys.id}
-                title={item.fields.title}
-                createdDate={item.sys.createdAt}
+              <PostCard
+                key={item.node.id}
+                title={item.node.title}
+                createdDate={item.node.publishedAt}
                 coverImage={coverImage}
-                imageUrl={coverImage?.fields.file.url}
-                imageTitle={coverImage?.title}
-                imageDescription={coverImage?.fields.description}
-                firstParagraph={item.fields.body.content[0]}
-                postSlug={item.fields.slug}
-            />
-            )
-        })}
-      </main>
-    </div>
-  </>
-);
+                imageUrl={coverImage.image?.url}
+                imageTitle={coverImage.image?.filename}
+                firstParagraph={item.node.description}
+                postSlug={item.node.slug}
+            
+              />
+            );
+          })}
+        </main>
+      </div>
+    </>
+  );
+};
 
 export default Blog;
