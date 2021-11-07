@@ -8,7 +8,7 @@ import formatDate from "../utils/formatDate";
 import styles from "../styles/Home.module.css";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = (await getPosts()) || []; 
+  const posts = (await getPosts(4)) || []; 
 
   return {
     props: { posts },

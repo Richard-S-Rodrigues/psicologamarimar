@@ -12,8 +12,8 @@ interface PostCardProps {
   createdDate: string;
   coverImage: object;
   imageUrl: string;
-  imageTitle: string;
-  imageDescription: string;
+  imageAuthor: string;
+  imageAuthorUrl: string;
   firstParagraph: any;
   postSlug: string;
 }
@@ -23,8 +23,8 @@ const PostCard = ({
   createdDate,
   coverImage,
   imageUrl,
-  imageTitle,
-  imageDescription,
+  imageAuthor,
+  imageAuthorUrl,
   firstParagraph,
   postSlug,
 }: PostCardProps) => (
@@ -46,29 +46,31 @@ const PostCard = ({
       {coverImage && (
         <>
           <Image
-            src={`https:${imageUrl}`}
-            alt={imageTitle || title}
+            src={imageUrl}
+            alt={title}
             width={2100}
             height={1298}
             layout="responsive"
           />
-          <a
-            href={imageDescription}
-            style={{
-              display: "flex",
+          {imageAuthor && (
+            <a
+              href={imageAuthorUrl}
+              style={{
+                display: "flex",
 
-              fontSize: "0.7rem",
-              justifyContent: "center",
-              color: "#ccc",
-            }}
-            rel="noreferrer"
-            target="_blank"
-          >
-            {imageDescription}
-          </a>
+                fontSize: "0.7rem",
+                justifyContent: "center",
+                color: "#ccc",
+              }}
+              rel="noreferrer"
+              target="_blank"
+            >
+              Imagem criada por {imageAuthor}
+            </a>
+          )}
         </>
       )}
-      {firstParagraph}
+      <p>{firstParagraph}</p>
     </div>
     <Link href={`/blog/${postSlug}`}>LER MAIS</Link>
   </article>

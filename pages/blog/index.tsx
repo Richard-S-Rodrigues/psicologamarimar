@@ -7,6 +7,7 @@ import PostCard from "../../components/PostCard";
 
 import styles from "./index.module.css";
 
+  
 export async function getStaticProps() {
   const data = await getPosts();
 
@@ -18,8 +19,6 @@ export async function getStaticProps() {
 }
 
 const Blog: NextPage = ({ articles }: any) => {
-  console.log(articles);
-
   return (
     <>
       <Head>
@@ -56,10 +55,10 @@ const Blog: NextPage = ({ articles }: any) => {
                 createdDate={item.node.publishedAt}
                 coverImage={coverImage}
                 imageUrl={coverImage.image?.url}
-                imageTitle={coverImage.image?.filename}
+                imageAuthor={coverImage?.author}
+                imageAuthorUrl={coverImage?.authorUrl}
                 firstParagraph={item.node.description}
                 postSlug={item.node.slug}
-            
               />
             );
           })}

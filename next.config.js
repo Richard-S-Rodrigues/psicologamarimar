@@ -2,6 +2,6 @@
 module.exports = {
   reactStrictMode: false,
   images: {
-    domains: ["images.ctfassets.net"],
+    domains: ["media.graphcms.com"],
   },
 };
