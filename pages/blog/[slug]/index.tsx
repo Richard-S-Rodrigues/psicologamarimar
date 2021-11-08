@@ -125,7 +125,7 @@ const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
       </Head>
       <article className={styles.container}>
         <main>
-          {post.coverImage && (
+          {post.coverImage?.length > 0 && (
             <div className={styles.imageContainer}>
               <Image
                 src={post.coverImage[0]?.image.url}
