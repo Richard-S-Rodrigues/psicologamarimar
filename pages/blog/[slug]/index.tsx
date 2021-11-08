@@ -102,7 +102,7 @@ const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
       ) {
         const props = attributesToProps(domNode.attribs);
         return (
-          <Image src={props.src} width={2400} height={1598} layout={"responsive"} />
+          <Image src={props.src} alt="" width={2400} height={1598} layout={"responsive"} />
         );
       }
     },
