@@ -2,20 +2,31 @@ import type { GetStaticProps, NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-import { getPosts } from "../services/getPosts";
+import { getRecentPosts } from "../services/getPosts";
 import formatDate from "../utils/formatDate";
 
 import styles from "../styles/Home.module.css";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = (await getPosts(4)) || []; 
+  const posts = (await getRecentPosts()) || [];
 
   return {
     props: { posts },
   };
 };
 
-const Home: NextPage = ({ posts }: any) => {
+type HomeProps = {
+  posts: [
+    {
+      id: string;
+      title: string;
+      slug: string;
+      createdAt: string;
+    }
+  ];
+};
+
+const Home: NextPage<HomeProps> = ({ posts }) => {
   return (
     <div className={styles.container}>
       <main>
@@ -57,11 +68,11 @@ const Home: NextPage = ({ posts }: any) => {
             <p>Nenhuma postagem criada ainda</p>
           ) : (
             posts.map((post) => (
-              <div key={post.node.id}>
+              <div key={post.id}>
                 <section className={styles.postTitleContainer}>
-                  <Link href={`/blog/${post.node.slug}`} passHref>
+                  <Link href={`/blog/${post.slug}`} passHref>
                     <a>
-                      <h2>{post.node.title}</h2>
+                      <h2>{post.title}</h2>
                     </a>
                   </Link>
                   <small>
@@ -72,7 +83,7 @@ const Home: NextPage = ({ posts }: any) => {
                       height="14"
                       layout="fixed"
                     />
-                    {formatDate(post.node.publishedAt)}
+                    {formatDate(post.createdAt)}
                   </small>
                 </section>
               </div>

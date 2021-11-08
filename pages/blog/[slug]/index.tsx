@@ -4,13 +4,35 @@ import Image from "next/image";
 
 import { getPosts, getPostBySlug } from "../../../services/getPosts";
 import formatDate from "../../../utils/formatDate";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { BLOCKS, INLINES } from "@contentful/rich-text-types";
+import parse, {
+  HTMLReactParserOptions,
+  attributesToProps,
+  Element,
+} from "html-react-parser";
 
 import styles from "./index.module.css";
 
+type PostsResponse = {
+  node: {
+    id: string;
+    title: string;
+    description: string;
+    slug: string;
+    createdAt: string;
+    coverImage?: [
+      {
+        author: string;
+        authorUrl: string;
+        image: {
+          url: string;
+        };
+      }
+    ];
+  };
+};
+
 export const getStaticPaths: GetStaticPaths = async () => {
-  const posts = (await getPosts()) || [];
+  const posts: PostsResponse[] = (await getPosts()) || [];
 
   return {
     paths: posts.map((post) => ({
@@ -27,20 +49,60 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: {
-      post: post[0].node,
+      post,
     },
   };
 };
 
-interface IPost {
+type BlogPostProps = {
+  post: {
+    title: string;
+    createdAt: string;
+    bodyContent: {
+      html: string;
+    };
+    coverImage?: [
+      {
+        author: string;
+        authorUrl: string;
+        image: {
+          url: string;
+        };
+      }
+    ];
+  };
+};
 
-}
-
-const BlogPost: NextPage = ({ post }) => {
-
+const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
+  const options: HTMLReactParserOptions = {
+    replace: (domNode) => {
+      if (
+        domNode instanceof Element &&
+        domNode.attribs &&
+        domNode.name == "iframe"
+      ) {
+        const props = attributesToProps(domNode.attribs);
+        return (
+          <div className={styles.imageFrameContainer}>
+            <iframe {...props} />
+          </div>
+        );
+      }
+      if (
+        domNode instanceof Element &&
+        domNode.attribs &&
+        domNode.name == "img"
+      ) {
+        const props = attributesToProps(domNode.attribs);
+        return (
+          <Image width={2400} height={1598} layout={"responsive"} {...props} />
+        );
+      }
+    },
+  };
   return (
     <>
-     <Head>
+      <Head>
         <title>Psicóloga Marimar - {post.title}</title>
         <Head>
           <meta
@@ -56,30 +118,30 @@ const BlogPost: NextPage = ({ post }) => {
       </Head>
       <article className={styles.container}>
         <main>
-          {post.coverImage && (
+          {post.coverImage.length > 0 && (
             <div className={styles.imageContainer}>
               <Image
-                src={post.coverImage[0].image.url}
-                alt={post.title }
+                src={post.coverImage[0]?.image.url}
+                alt={post.title}
                 width={2400}
                 height={1598}
                 objectFit="contain"
                 layout="responsive"
               />
-              {post.coverImage[0].author && (
-              <a
-                href={post.coverImage[0].authorUrl}
-                style={{
-                  display: "flex",
-                  fontSize: "0.7rem",
-                  justifyContent: "center",
-                  color: "#ccc",
-                }}
-                rel="noreferrer"
-                target="_blank"
-              >
-                Imagem criada por {post.coverImage[0].author}
-              </a>
+              {post.coverImage[0]?.author && (
+                <a
+                  href={post.coverImage[0]?.authorUrl}
+                  style={{
+                    display: "flex",
+                    fontSize: "0.7rem",
+                    justifyContent: "center",
+                    color: "#ccc",
+                  }}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  Imagem criada por {post.coverImage[0]?.author}
+                </a>
               )}
             </div>
           )}
@@ -93,10 +155,11 @@ const BlogPost: NextPage = ({ post }) => {
                 height="15"
                 layout="fixed"
               />
-              {formatDate(post.publishedAt)}
+              {formatDate(post.createdAt)}
             </small>
           </section>
           <section className={styles.bodyContent}>
+            {parse(post.bodyContent.html, options)}
           </section>
         </main>
       </article>

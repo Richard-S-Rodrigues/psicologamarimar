@@ -29,6 +29,18 @@ a:hover {
   text-decoration-color: var(--yellow);
 }
 
+ol,
+ul {
+  margin: 1em;
+}
+li {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  text-align: justify;
+  text-justify: inter-word;
+  margin: 1em auto;
+}
+
 button {
   cursor: pointer;
   border: 0;

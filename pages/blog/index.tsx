@@ -7,7 +7,6 @@ import PostCard from "../../components/PostCard";
 
 import styles from "./index.module.css";
 
-  
 export async function getStaticProps() {
   const data = await getPosts();
 
@@ -18,7 +17,30 @@ export async function getStaticProps() {
   };
 }
 
-const Blog: NextPage = ({ articles }: any) => {
+type BlogProps = {
+  articles: [
+    {
+      node: {
+        id: string;
+        title: string;
+        slug: string;
+        description: string;
+        createdAt: string;
+        coverImage?: [
+          {
+            id: string;
+            author: string;
+            authorUrl: string;
+            image: {
+              url: string;
+            };
+          }
+        ];
+      };
+    }
+  ];
+};
+const Blog: NextPage<BlogProps> = ({ articles }) => {
   return (
     <>
       <Head>
@@ -52,9 +74,9 @@ const Blog: NextPage = ({ articles }: any) => {
               <PostCard
                 key={item.node.id}
                 title={item.node.title}
-                createdDate={item.node.publishedAt}
+                createdDate={item.node.createdAt}
                 coverImage={coverImage}
-                imageUrl={coverImage.image?.url}
+                imageUrl={coverImage?.image.url}
                 imageAuthor={coverImage?.author}
                 imageAuthorUrl={coverImage?.authorUrl}
                 firstParagraph={item.node.description}
