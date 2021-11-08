@@ -2,8 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 import formatDate from "../../utils/formatDate";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 
 import styles from "./index.module.css";
 
