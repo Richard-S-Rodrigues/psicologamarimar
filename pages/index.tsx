@@ -40,7 +40,6 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
               height="100"
               layout="responsive"
               placeholder={"blur"}
-              priority={true}
             />
             <a
               href="https://br.freepik.com/vetores/internet"
