@@ -102,7 +102,13 @@ const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
       ) {
         const props = attributesToProps(domNode.attribs);
         return (
-          <Image src={props.src} alt="" width={2400} height={1598} layout={"responsive"} />
+          <Image
+            src={props.src}
+            alt=""
+            width={2400}
+            height={1598}
+            layout={"responsive"}
+          />
         );
       }
     },
@@ -129,11 +135,15 @@ const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
             <div className={styles.imageContainer}>
               <Image
                 src={post.coverImage[0]?.image.url}
+                blurDataURL={
+                  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mM8Vw8AAiEBT6ythdcAAAAASUVORK5CYII= "
+                }
                 alt={post.title}
                 width={2400}
                 height={1598}
                 objectFit="contain"
                 layout="responsive"
+                placeholder={"blur"}
               />
               {post.coverImage[0]?.author && (
                 <a
