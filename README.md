@@ -7,7 +7,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [NextJS](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Nodemailer](https://nodemailer.com/about/)
-- [Contentful](https://www.contentful.com/)
+- [GraphCMS](https://graphcms.com/)
 
 ## 💻 Projeto
 
