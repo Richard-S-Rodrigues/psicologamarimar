@@ -62,7 +62,7 @@ const PostCard = ({
 
                 fontSize: "0.7rem",
                 justifyContent: "center",
-                color: "#ccc",
+                color: "rgb(166, 166, 166)",
               }}
               rel="noreferrer"
               target="_blank"
