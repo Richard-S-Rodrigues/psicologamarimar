@@ -152,7 +152,7 @@ const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
                     display: "flex",
                     fontSize: "0.7rem",
                     justifyContent: "center",
-                    color: "#ccc",
+                    color: "rgb(1 101 181)",
                   }}
                   rel="noreferrer"
                   target="_blank"

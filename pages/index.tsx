@@ -49,7 +49,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
                 justifyContent: "center",
                 marginTop: 0,
                 marginBottom: "2em",
-                color: "#a6a6a6",
+                color: "rgb(1 101 181)",
               }}
               rel="noreferrer"
               target="_blank"
