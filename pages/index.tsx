@@ -5,6 +5,7 @@ import Link from "next/link";
 import { getRecentPosts } from "../services/getPosts";
 import formatDate from "../utils/formatDate";
 
+import OnlineTherapyImage from "/public/assets/online-therapy.png";
 import styles from "../styles/Home.module.css";
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -33,11 +34,13 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
         <section className={styles.imgContainer}>
           <div className={styles.image}>
             <Image
-              src="/assets/online-therapy.png"
+              src={OnlineTherapyImage}
               alt="Terapia online"
               width="100"
               height="100"
               layout="responsive"
+              placeholder={"blur"}
+              priority={true}
             />
             <a
               href="https://br.freepik.com/vetores/internet"

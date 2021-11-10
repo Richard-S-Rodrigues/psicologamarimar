@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
 
+import HeroImage from "/public/assets/bg-image-header.jpg";
 import styles from "./index.module.css";
 
 const Header = () => {
@@ -11,11 +12,12 @@ const Header = () => {
     <div className={styles.container}>
       <Image
         className={styles.landingImage}
-        src="/assets/bg-image-header.jpg"
+        src={HeroImage}
         alt=""
         layout="fill"
         objectFit="cover"
         objectPosition="center"
+        placeholder={"blur"}
         priority={true}
       />
       <header>
