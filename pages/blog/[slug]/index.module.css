@@ -16,7 +16,7 @@
 }
 
 .titleContainer h1 {
-  font-size: 2.25rem;
+  font-size: 2rem;
   font-weight: 700;
   width: auto;
   margin-bottom: 0.5em;
@@ -61,7 +61,7 @@
 
 @media (max-width: 660px) {
   .titleContainer h1 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   .bodyContent p {
