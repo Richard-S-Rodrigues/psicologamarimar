@@ -6,9 +6,10 @@
 .postCard a:last-child {
   cursor: pointer;
   border: 0;
+  border-radius: 0.25rem;
   background-color: var(--blue);
   color: var(--light-blue);
-  padding: 0.5em;
+  padding: 1em;
   font-weight: 600;
   font-size: 0.8rem;
   transition: all 0.4s;

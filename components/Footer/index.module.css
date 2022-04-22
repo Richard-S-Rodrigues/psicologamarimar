@@ -30,6 +30,10 @@
   align-items: center;
 }
 
+.medias div span {
+  margin-left: 0.5em;
+}
+
 .medias > div {
   margin: 1em auto;
 }
