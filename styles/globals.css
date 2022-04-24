@@ -2,6 +2,7 @@ html,
 body {
   font-family: "Montserrat", sans-serif;
   overflow-x: hidden;
+  font-size: ;
 }
 
 * {
@@ -15,6 +16,22 @@ body {
   --dark-blue: #002441;
   --yellow: #d8be52;
   --light-blue: #f5fbff;
+}
+
+p {
+  line-height: 1.5;
+}
+
+@media (max-width: 1080px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+
+@media (max-width: 720px) {
+  html {
+    font-size: 87.5%;
+  }
 }
 
 a {

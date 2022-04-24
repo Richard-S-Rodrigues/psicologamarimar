@@ -7,142 +7,69 @@
 }
 
 .container main {
-  display: flex;
-  width: 90%;
-  margin: 0 auto;
-  margin-top: 5em;
-  height: 100%;
-}
-
-.formContainer {
-  margin-bottom: 2em;
-  width: 100%;
-}
-
-.formContainer form {
-  margin-top: 1em;
-}
-
-.formContainer form div {
   display: block;
-  margin-bottom: 2em;
+  width: min(50em, 90%);
+  margin: auto;
+  padding: 4em 0;
 }
 
-.formContainer form div input,
-.formContainer form div textarea {
-  width: 100%;
-  padding: 0.2em;
-  font-size: 18px;
+.aboutTherapyContainer h1 {
+  text-align: center;
 }
 
-.formContainer form div textarea {
-  height: auto;
-  min-height: 10em;
+.aboutTherapyContainer article {
+  margin: 1em 0;
+}
+
+.aboutTherapyContainer article p {
+  text-align: justify;
 }
 
 .contactContainer {
-  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
+}
+
+.contactContainer div:first-child {
+  text-align: center;
+}
+
+.contactContainer div small {
   display: flex;
   flex-direction: column;
+}
+
+.contactContainer div span img {
+  border-radius: 50%;
+}
+
+.contactContainer div a {
+  display: flex;
   align-items: center;
+  color: #25d366;
 }
 
-.contactContainer ul {
+.contactContainer div a svg {
+  margin-right: 0.4em;
+}
+
+.qrCode {
   margin-top: 1em;
-  margin-left: 1em;
 }
 
-.contactContainer ul li {
-  font-size: 18px;
-  margin-top: 2em;
-  margin-bottom: 1em;
-}
-
-.success {
-  position: sticky;
-  text-align: center;
-  top: 0;
-  padding: 1em;
-  background: rgb(22, 161, 34);
-  color: #fff;
-  font-weight: 600;
-  opacity: 0.8;
-}
-
-.fail {
-  position: sticky;
-  text-align: center;
-  top: 0;
-  padding: 1em;
-  background: rgb(161, 22, 22);
-  color: #fff;
-  font-weight: 600;
-  opacity: 0.8;
-}
-
-.hide {
-  -moz-animation: cssAnimation 0s ease-in 5s forwards;
-  /* Firefox */
-  -webkit-animation: cssAnimation 0s ease-in 5s forwards;
-  /* Safari and Chrome */
-  -o-animation: cssAnimation 0s ease-in 5s forwards;
-  /* Opera */
-  animation: cssAnimation 0s ease-in 5s forwards;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-
-@keyframes cssAnimation {
-  0% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@-webkit-keyframes cssAnimation {
-  0% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@media (max-width: 725px) {
-  .container main {
-    display: block;
-    width: 80%;
-    margin-top: 5em;
-  }
-
+@media (max-width: 600px) {
   .contactContainer {
-    margin-top: 2em;
-    margin-left: 0;
+    flex-direction: column-reverse;
   }
 
-  .contactContainer h2 {
-    font-size: 20px;
+  .scheduleContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
   }
 
-  .contactContainer ul {
-    margin: 0 auto;
-  }
-
-  .contactContainer ul li h3 {
-    font-size: 18px;
-  }
-}
-
-@media (max-width: 380px) {
-  .contactContainer ul li {
-    word-wrap: anywhere;
-    text-align: left;
+  .qrCode {
+    display: none;
   }
 }
