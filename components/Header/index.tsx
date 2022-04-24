@@ -9,7 +9,7 @@ import Menu from "../Menu";
 
 const Header = () => {
   const { pathname, push } = useRouter();
-  const [isMenu, setIsMenu] = useState(true);
+  const [isMenu, setIsMenu] = useState(false);
 
   return isMenu ? (
     <Menu setIsMenu={setIsMenu} />
