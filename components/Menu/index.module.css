@@ -1,0 +1,47 @@
+.closeBtn {
+  position: fixed;
+  z-index: 101;
+  color: #fff;
+  top: 1.2em;
+  right: 0.8em;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  padding-bottom: 1em;
+  text-align: center;
+
+  background: var(--dark-blue);
+
+  color: #fff;
+
+  top: 0;
+  position: fixed;
+  z-index: 100;
+}
+
+.landingImage {
+  z-index: 0;
+  opacity: 0.3;
+}
+
+.container main {
+  height: 100%;
+  position: relative;
+}
+
+.container main nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.activedLink {
+  color: #d8be52;
+}

@@ -1,17 +1,21 @@
+import { useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
 
 import HeroImage from "/public/assets/bg-image-header.jpg";
 import styles from "./index.module.css";
+import Menu from "../Menu";
 
 const Header = () => {
   const { pathname, push } = useRouter();
+  const [isMenu, setIsMenu] = useState(true);
 
-  return (
+  return isMenu ? (
+    <Menu setIsMenu={setIsMenu} />
+  ) : (
     <div className={styles.container}>
       <Image
-        className={styles.landingImage}
         src={HeroImage}
         alt=""
         layout="fill"
@@ -20,6 +24,7 @@ const Header = () => {
         placeholder={"blur"}
         priority={true}
       />
+
       <header>
         <section className={styles.titleContainer}>
           <div>
@@ -27,8 +32,16 @@ const Header = () => {
             <h1>MARIMAR NASCIMENTO</h1>
             <small>PSICÓLOGA | CRP 05/66100</small>
           </div>
-          <div className={styles.telephoneInfo}>WhatsApp: (21) 97400-9839</div>
+          <div className={styles.telephoneAndMenuContainer}>
+            <div className={styles.telephoneInfo}>
+              WhatsApp: (21) 97400-9839
+            </div>
+            <button className={styles.menuBtn} onClick={() => setIsMenu(true)}>
+              MENU
+            </button>
+          </div>
         </section>
+
         <section className={styles.navContainer}>
           <nav>
             <Link href="/">
@@ -59,7 +72,7 @@ const Header = () => {
           </nav>
         </section>
       </header>
-      <section>
+      <section className={styles.contactContainer}>
         <h2>Psicoterapia individual online para adultos e idosos.</h2>
         <button onClick={() => push("/contato")}>ENTRE EM CONTATO</button>
       </section>

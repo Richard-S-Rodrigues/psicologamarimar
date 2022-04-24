@@ -12,7 +12,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const posts = (await getRecentPosts()) || [];
 
   return {
-    props: { posts },
+    props: { posts }
   };
 };
 
@@ -49,7 +49,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
                 justifyContent: "center",
                 marginTop: 0,
                 marginBottom: "2em",
-                color: "rgb(1 101 181)",
+                color: "rgb(1 101 181)"
               }}
               rel="noreferrer"
               target="_blank"

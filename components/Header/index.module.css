@@ -15,10 +15,6 @@
   position: relative;
 }
 
-.landingImage {
-  z-index: 0;
-}
-
 .container header {
   width: 50%;
   margin: 0 auto;
@@ -33,7 +29,7 @@
   z-index: 1;
 }
 
-.container section button {
+.contactContainer button {
   margin-top: 2em;
 }
 
@@ -47,6 +43,15 @@
   top: 2em;
   right: 6em;
   width: 14em;
+}
+
+.telephoneAndMenuContainer {
+  display: flex;
+  align-items: center;
+}
+
+.menuBtn {
+  display: none;
 }
 
 .navContainer {
@@ -89,12 +94,12 @@
     margin: 0 auto;
   }
 
-  .navContainer nav {
-    display: block;
+  .menuBtn {
+    display: flex;
+    margin-top: 2em;
   }
 
-  .navContainer nav a {
-    display: block;
-    margin-top: 1em;
+  .navContainer nav {
+    display: none;
   }
 }
