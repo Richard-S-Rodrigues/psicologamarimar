@@ -54,6 +54,11 @@
   margin-right: 0.4em;
 }
 
+.scheduleContainer a {
+  display: flex;
+  justify-content: center;
+}
+
 .qrCode {
   margin-top: 1em;
 }
