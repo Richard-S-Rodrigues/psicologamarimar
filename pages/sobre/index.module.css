@@ -16,15 +16,9 @@
   width: 60%;
 }
 
-.textContainer h1 {
-  font-size: 30px;
-}
-
 .textContainer p {
   text-align: justify;
   text-justify: inter-word;
-  font-size: 20px;
-  line-height: 1.8;
   margin-top: 1em;
 }
 

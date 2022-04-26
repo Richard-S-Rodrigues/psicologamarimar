@@ -5,6 +5,11 @@
   top: 1.2em;
   right: 0.8em;
   cursor: pointer;
+  transition: all 0.9s;
+}
+
+.closeBtn:hover {
+  color: var(--yellow);
 }
 
 .container {

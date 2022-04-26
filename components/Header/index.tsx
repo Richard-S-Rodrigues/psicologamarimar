@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
 
+import { GiHamburgerMenu } from "react-icons/gi";
 import HeroImage from "/public/assets/bg-image-header.jpg";
 import styles from "./index.module.css";
 import Menu from "../Menu";
@@ -36,9 +37,11 @@ const Header = () => {
             <div className={styles.telephoneInfo}>
               WhatsApp: (21) 97400-9839
             </div>
-            <button className={styles.menuBtn} onClick={() => setIsMenu(true)}>
-              MENU
-            </button>
+            <GiHamburgerMenu
+              size={28}
+              className={styles.menuBtn}
+              onClick={() => setIsMenu(true)}
+            />
           </div>
         </section>
 

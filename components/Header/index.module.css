@@ -68,7 +68,7 @@
 }
 
 .activedLink {
-  color: #d8be52;
+  color: var(--yellow);
 }
 
 @media (max-width: 720px) {
@@ -97,6 +97,13 @@
   .menuBtn {
     display: flex;
     margin-top: 1em;
+    margin-left: 0.5em;
+    cursor: pointer;
+    transition: all 0.9s;
+  }
+
+  .menuBtn:hover {
+    color: var(--yellow);
   }
 
   .navContainer nav {
