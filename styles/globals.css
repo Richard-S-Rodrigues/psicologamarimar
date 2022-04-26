@@ -34,6 +34,24 @@ p {
   }
 }
 
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 720px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+}
+
 a {
   color: inherit;
   text-decoration: none;
