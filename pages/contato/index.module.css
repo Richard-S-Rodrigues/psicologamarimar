@@ -32,12 +32,14 @@
 }
 
 .contactContainer div:first-child {
+  width: 15.5em;
   text-align: center;
 }
 
 .contactContainer div small {
   display: flex;
   flex-direction: column;
+  margin-top: 1.4em;
 }
 
 .contactContainer div span img {
@@ -57,6 +59,9 @@
 .scheduleContainer a {
   display: flex;
   justify-content: center;
+  border: 1px solid #25d366;
+  border-radius: 0.25rem;
+  padding: 1em;
 }
 
 .qrCode {
@@ -66,6 +71,11 @@
 @media (max-width: 600px) {
   .contactContainer {
     flex-direction: column-reverse;
+  }
+
+  .contactContainer div:first-child {
+    width: 50%;
+    margin: auto;
   }
 
   .scheduleContainer {

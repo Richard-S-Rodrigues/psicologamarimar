@@ -51,7 +51,7 @@ const Footer = () => {
               layout="fixed"
             />
             <div>
-              <h1>Marimar Nascimento</h1>
+              <h2>Marimar Nascimento</h2>
               <small>Psicóloga</small>
             </div>
           </div>

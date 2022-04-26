@@ -35,9 +35,9 @@ const Contact: NextPage = () => {
               <Image
                 src="/assets/photo.jpg"
                 alt="Psicóloga"
-                width="100"
-                height="100"
-                layout="fixed"
+                width={100}
+                height={100}
+                layout="responsive"
               />
               <small>
                 <span>Marimar Nascimento</span>
